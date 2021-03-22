@@ -1,0 +1,13 @@
+D:\0\0\Notice My Car\Services\bin\Debug\Services.dll
+D:\0\0\Notice My Car\Services\bin\Debug\Services.pdb
+D:\0\0\Notice My Car\Services\obj\Debug\Services.csprojAssemblyReference.cache
+D:\0\0\Notice My Car\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+D:\0\0\Notice My Car\Services\obj\Debug\Services.dll
+D:\0\0\Notice My Car\Services\obj\Debug\Services.pdb
+D:\0\0\Notice My Car\Services\bin\Debug\Models.dll
+D:\0\0\Notice My Car\Services\bin\Debug\Newtonsoft.Json.dll
+D:\0\0\Notice My Car\Services\bin\Debug\System.Net.Http.Formatting.dll
+D:\0\0\Notice My Car\Services\bin\Debug\Models.pdb
+D:\0\0\Notice My Car\Services\bin\Debug\Newtonsoft.Json.xml
+D:\0\0\Notice My Car\Services\bin\Debug\System.Net.Http.Formatting.xml
+D:\0\0\Notice My Car\Services\obj\Debug\Services.csproj.CopyComplete
