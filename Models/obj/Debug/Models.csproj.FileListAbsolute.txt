@@ -1,6 +1,0 @@
-D:\0\0\Notice My Car\Models\bin\Debug\Models.dll
-D:\0\0\Notice My Car\Models\bin\Debug\Models.pdb
-D:\0\0\Notice My Car\Models\obj\Debug\Models.csprojAssemblyReference.cache
-D:\0\0\Notice My Car\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
-D:\0\0\Notice My Car\Models\obj\Debug\Models.dll
-D:\0\0\Notice My Car\Models\obj\Debug\Models.pdb
