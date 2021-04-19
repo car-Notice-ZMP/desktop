@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{40C41F37-ECC0-4F44-9393-22E74202489D}</ProjectGuid>
+    <ProjectGuid>{E29C34F0-D233-433B-B266-C5C6FA1951E9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>NoticeMyCar</RootNamespace>
     <AssemblyName>NoticeMyCar</AssemblyName>
@@ -33,8 +33,46 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=6.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.6.1.0\lib\netstandard2.0\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.11.7.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.11.7\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,31 +84,83 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Presenters\LoginPresenter.cs" />
-    <Compile Include="Services\Login\LoginService.cs" />
-    <Compile Include="Views\FormLogin.cs">
+    <Compile Include="Account\CreateObjects.cs" />
+    <Compile Include="Account\ICreateObjects.cs" />
+    <Compile Include="Account\Model\IModelA.cs" />
+    <Compile Include="Account\Model\ModelA.cs" />
+    <Compile Include="Account\Presenter\PresenterA.cs" />
+    <Compile Include="Account\Service\IServiceA.cs" />
+    <Compile Include="Account\Service\ServiceA.cs" />
+    <Compile Include="Account\View\IViewA.cs" />
+    <Compile Include="Account\View\ViewA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormLogin.Designer.cs">
-      <DependentUpon>FormLogin.cs</DependentUpon>
+    <Compile Include="Account\View\ViewA.Designer.cs">
+      <DependentUpon>ViewA.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormRegistration.cs">
+    <Compile Include="Login\ICreateObjects.cs" />
+    <Compile Include="Login\Service\IServiceL.cs" />
+    <Compile Include="Login\View\IViewL.cs" />
+    <Compile Include="Login\View\ViewL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormRegistration.Designer.cs">
-      <DependentUpon>FormRegistration.cs</DependentUpon>
+    <Compile Include="Login\View\ViewL.Designer.cs">
+      <DependentUpon>ViewL.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormValue.cs">
+    <Compile Include="Login\Model\IModelL.cs" />
+    <Compile Include="Login\Model\ModelL.cs" />
+    <Compile Include="Login\Presenter\PresenterL.cs" />
+    <Compile Include="Login\Service\ServiceL.cs" />
+    <Compile Include="Login\CreateObjects.cs" />
+    <Compile Include="Menu\View\ViewM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormValue.Designer.cs">
-      <DependentUpon>FormValue.cs</DependentUpon>
+    <Compile Include="Menu\View\ViewM.Designer.cs">
+      <DependentUpon>ViewM.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\IFormLogin.cs" />
-    <Compile Include="Views\Program.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Views\FormLogin.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
+    <Compile Include="Registration\CreateObjects.cs" />
+    <Compile Include="Registration\ICreateObjects.cs" />
+    <Compile Include="Registration\Model\IModelR.cs" />
+    <Compile Include="Registration\Model\ModelR.cs" />
+    <Compile Include="Registration\Presenter\PresenterR.cs" />
+    <Compile Include="Registration\Service\IServiceR.cs" />
+    <Compile Include="Registration\Service\ServiceR.cs" />
+    <Compile Include="Registration\View\IViewR.cs" />
+    <Compile Include="Registration\View\ViewR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration\View\ViewR.Designer.cs">
+      <DependentUpon>ViewR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellACar\View\AddingACarForSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellACar\View\AddingACarForSale.Designer.cs">
+      <DependentUpon>AddingACarForSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellACar\View\PanelNotice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellACar\View\PanelNotice.Designer.cs">
+      <DependentUpon>PanelNotice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellACar\View\ViewS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellACar\View\ViewS.Designer.cs">
+      <DependentUpon>ViewS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Token.cs" />
+    <EmbeddedResource Include="Account\View\ViewA.resx">
+      <DependentUpon>ViewA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\View\ViewL.resx">
+      <DependentUpon>ViewL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\View\ViewM.resx">
+      <DependentUpon>ViewM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,9 +171,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\FormRegistration.resx">
-      <DependentUpon>FormRegistration.cs</DependentUpon>
+    <EmbeddedResource Include="Registration\View\ViewR.resx">
+      <DependentUpon>ViewR.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SellACar\View\AddingACarForSale.resx">
+      <DependentUpon>AddingACarForSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellACar\View\PanelNotice.resx">
+      <DependentUpon>PanelNotice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellACar\View\ViewS.resx">
+      <DependentUpon>ViewS.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -96,6 +196,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Observed\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
