@@ -37,16 +37,17 @@ namespace NoticeMyCar.SellACars.AddNotice.View
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.iconButtonWhetherAdded = new FontAwesome.Sharp.IconButton();
+            this.iconPictureBoxWhetherAdded = new FontAwesome.Sharp.IconPictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWhetherAdded)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.panel1.Controls.Add(this.iconButtonWhetherAdded);
+            this.panel1.Controls.Add(this.iconPictureBoxWhetherAdded);
             this.panel1.Controls.Add(this.buttonCreate);
             this.panel1.Controls.Add(this.pictureBoxCar);
             this.panel1.Controls.Add(this.richTextBoxContent);
@@ -128,22 +129,20 @@ namespace NoticeMyCar.SellACars.AddNotice.View
             this.label1.TabIndex = 0;
             this.label1.Text = "Zdjęcie:";
             // 
-            // iconButtonWhetherAdded
+            // iconPictureBoxWhetherAdded
             // 
-            this.iconButtonWhetherAdded.BackColor = System.Drawing.Color.Transparent;
-            this.iconButtonWhetherAdded.FlatAppearance.BorderSize = 0;
-            this.iconButtonWhetherAdded.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonWhetherAdded.ForeColor = System.Drawing.Color.LightGray;
-            this.iconButtonWhetherAdded.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            this.iconButtonWhetherAdded.IconColor = System.Drawing.Color.LimeGreen;
-            this.iconButtonWhetherAdded.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonWhetherAdded.IconSize = 100;
-            this.iconButtonWhetherAdded.Location = new System.Drawing.Point(600, 25);
-            this.iconButtonWhetherAdded.Name = "iconButtonWhetherAdded";
-            this.iconButtonWhetherAdded.Size = new System.Drawing.Size(100, 100);
-            this.iconButtonWhetherAdded.TabIndex = 27;
-            this.iconButtonWhetherAdded.UseVisualStyleBackColor = false;
-            this.iconButtonWhetherAdded.Visible = false;
+            this.iconPictureBoxWhetherAdded.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.iconPictureBoxWhetherAdded.ForeColor = System.Drawing.Color.LimeGreen;
+            this.iconPictureBoxWhetherAdded.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            this.iconPictureBoxWhetherAdded.IconColor = System.Drawing.Color.LimeGreen;
+            this.iconPictureBoxWhetherAdded.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBoxWhetherAdded.IconSize = 100;
+            this.iconPictureBoxWhetherAdded.Location = new System.Drawing.Point(600, 25);
+            this.iconPictureBoxWhetherAdded.Name = "iconPictureBoxWhetherAdded";
+            this.iconPictureBoxWhetherAdded.Size = new System.Drawing.Size(100, 100);
+            this.iconPictureBoxWhetherAdded.TabIndex = 28;
+            this.iconPictureBoxWhetherAdded.TabStop = false;
+            this.iconPictureBoxWhetherAdded.Visible = false;
             // 
             // ViewA
             // 
@@ -161,6 +160,7 @@ namespace NoticeMyCar.SellACars.AddNotice.View
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWhetherAdded)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -175,6 +175,6 @@ namespace NoticeMyCar.SellACars.AddNotice.View
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private FontAwesome.Sharp.IconButton iconButtonWhetherAdded;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxWhetherAdded;
     }
 }

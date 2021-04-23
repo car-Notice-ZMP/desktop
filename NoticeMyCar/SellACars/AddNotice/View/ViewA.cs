@@ -44,16 +44,16 @@ namespace NoticeMyCar.SellACars.AddNotice.View
         {
             if (report)
             {
-                iconButtonWhetherAdded.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-                iconButtonWhetherAdded.IconColor = Color.LimeGreen;
+                iconPictureBoxWhetherAdded.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+                iconPictureBoxWhetherAdded.IconColor = Color.LimeGreen;
             }
             else
             {
-                iconButtonWhetherAdded.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-                iconButtonWhetherAdded.IconColor = Color.Red;
+                iconPictureBoxWhetherAdded.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+                iconPictureBoxWhetherAdded.IconColor = Color.Red;
             }
 
-            iconButtonWhetherAdded.Visible = true;
+            iconPictureBoxWhetherAdded.Visible = true;
         }
 
         private void buttonCreate_Click(object sender, EventArgs e)
