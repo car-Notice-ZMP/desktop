@@ -36,6 +36,6 @@ D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.Menu.View.ViewM.resource
 D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.Account.View.ViewA.resources
 D:\0\0\10\NoticeMyCar\NoticeMyCar\bin\Debug\RestSharp.dll
 D:\0\0\10\NoticeMyCar\NoticeMyCar\bin\Debug\RestSharp.xml
-D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.SellACar.View.ViewS.resources
-D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.SellACar.View.AddingACarForSale.resources
-D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.SellACar.View.PanelNotice.resources
+D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.SellACars.AddNotice.View.ViewA.resources
+D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.SellACars.Notices.View.ViewN.resources
+D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.SellACars.WindowMain.View.ViewW.resources

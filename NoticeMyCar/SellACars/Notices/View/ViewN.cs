@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NoticeMyCar.SellACar.View
+namespace NoticeMyCar.SellACars.Notices.View
 {
-    public partial class PanelNotice : Form
+    public partial class ViewN : Form
     {
-        public PanelNotice()
+        public ViewN()
         {
             InitializeComponent();
         }

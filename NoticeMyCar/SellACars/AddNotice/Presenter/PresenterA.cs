@@ -1,30 +1,30 @@
-﻿using NoticeMyCar.Login.View;
-using NoticeMyCar.Services.Login;
+﻿using NoticeMyCar.SellACars.AddNotice.Service;
+using NoticeMyCar.SellACars.AddNotice.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NoticeMyCar.Login.Presenter
+namespace NoticeMyCar.SellACars.AddNotice.Presenter
 {
-    class PresenterL
+    class PresenterA
     {
-        private readonly IViewL _view;
-        private readonly IServiceL _service;
+        private readonly IViewA _view;
+        private readonly IServiceA _service;
         private readonly IReport _report;
 
-        public PresenterL(IViewL view, IServiceL service, IReport report)
+        public PresenterA(IViewA view, IServiceA service, IReport report)
         {
             _view = view;
-            _view.login += new EventHandler(iFormLogin_LoginEvent);
+            _view.notice += new EventHandler(iFormLogin_LoginEvent);
             _service = service;
             _report = report;
         }
 
         void iFormLogin_LoginEvent(object sender, EventArgs e)
         {
-            if (_service.Login(_view))
+            if (_service.Notice(_view))
                 _report.Report(true);
             else
                 _report.Report(false);

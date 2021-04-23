@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NoticeMyCar.SellACars.AddNotice.View;
+using NoticeMyCar.SellACars.Notices.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +10,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NoticeMyCar.SellACar.View
+namespace NoticeMyCar.SellACars.WindowMain.View
 {
-    public partial class ViewS : Form
+    public partial class ViewW : Form
     {
-        public ViewS()
+        public ViewW()
         {
             InitializeComponent();
             Notices();
@@ -27,13 +29,13 @@ namespace NoticeMyCar.SellACar.View
             {
                 do
                 {
-                    PanelNotice viewPanelNotice = new PanelNotice();
+                    ViewN notice = new ViewN();
 
-                    viewPanelNotice.TopLevel = false;
-                    viewPanelNotice.Location = new Point(w, h);
+                    notice.TopLevel = false;
+                    notice.Location = new Point(w, h);
 
-                    Controls.Add(viewPanelNotice);
-                    viewPanelNotice.Show();
+                    Controls.Add(notice);
+                    notice.Show();
 
                     w += 250;
                 } while (w < Screen.PrimaryScreen.Bounds.Width - 797);
@@ -60,7 +62,8 @@ namespace NoticeMyCar.SellACar.View
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            changePanel(new AddingACarForSale());
+            iconButton1.Hide();
+            changePanel(new ViewA());
         }
     }
 }

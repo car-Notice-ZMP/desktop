@@ -3,12 +3,12 @@ using System;
 
 namespace NoticeMyCar.Account.View
 {
-    public interface IDataA
+    public interface IData
     {
         void Data(IModelA data);
     }
 
-    public interface IViewA : IDataA
+    public interface IViewA : IData
     {
         event EventHandler profile;
     }

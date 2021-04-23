@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace NoticeMyCar.Account.Service
 {
-    public class ServiceA : IServiceA
+    class ServiceA : IServiceA
     {
-        private IModelA _model;
+        private readonly IModelA _model;
 
         public ServiceA(IModelA model)
         {
@@ -19,6 +19,11 @@ namespace NoticeMyCar.Account.Service
 
         public IModelA Profile()
         {
+            string avatar = "";
+            string name = "";
+            string email = "";
+            int i = 0;
+
             var client = new RestClient("https://citygame.ga/api/auth/profile");
             client.Timeout = -1;
             var request = new RestRequest(Method.GET);
@@ -27,9 +32,24 @@ namespace NoticeMyCar.Account.Service
 
             string[] result = response.Content.Split(new char[] { '"' });
 
-            _model.avatar = result[17];
-            _model.name = result[7];
-            _model.email = result[11];
+            foreach (var r in result)
+            {
+                if (r.Equals("name"))
+                    name = result[i + 2];
+                else if (r.Equals("email"))
+                    email = result[i + 2];
+                else if (r.Equals("avatar"))
+                {
+                    avatar = result[i + 2];
+                    break;
+                }
+
+                i++;
+            }
+
+            _model.avatar = avatar;
+            _model.name = name;
+            _model.email = email;
 
             return _model;
         }

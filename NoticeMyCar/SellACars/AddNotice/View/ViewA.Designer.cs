@@ -1,7 +1,7 @@
 ﻿
-namespace NoticeMyCar.SellACar.View
+namespace NoticeMyCar.SellACars.AddNotice.View
 {
-    partial class AddingACarForSale
+    partial class ViewA
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,14 @@ namespace NoticeMyCar.SellACar.View
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonCreate = new System.Windows.Forms.Button();
             this.pictureBoxCar = new System.Windows.Forms.PictureBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.richTextBoxContent = new System.Windows.Forms.RichTextBox();
+            this.textBoxtitle = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.iconButtonWhetherAdded = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).BeginInit();
             this.SuspendLayout();
@@ -44,9 +46,11 @@ namespace NoticeMyCar.SellACar.View
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panel1.Controls.Add(this.iconButtonWhetherAdded);
+            this.panel1.Controls.Add(this.buttonCreate);
             this.panel1.Controls.Add(this.pictureBoxCar);
-            this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.richTextBoxContent);
+            this.panel1.Controls.Add(this.textBoxtitle);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -54,7 +58,20 @@ namespace NoticeMyCar.SellACar.View
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(729, 508);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
+            // 
+            // buttonCreate
+            // 
+            this.buttonCreate.AutoSize = true;
+            this.buttonCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonCreate.Location = new System.Drawing.Point(556, 432);
+            this.buttonCreate.Name = "buttonCreate";
+            this.buttonCreate.Size = new System.Drawing.Size(144, 45);
+            this.buttonCreate.TabIndex = 25;
+            this.buttonCreate.Text = "Stwórz";
+            this.buttonCreate.UseVisualStyleBackColor = false;
+            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
             // pictureBoxCar
             // 
@@ -68,21 +85,21 @@ namespace NoticeMyCar.SellACar.View
             this.pictureBoxCar.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBoxCar_DragDrop);
             this.pictureBoxCar.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBoxCar_DragEnter);
             // 
-            // richTextBox1
+            // richTextBoxContent
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.richTextBox1.Location = new System.Drawing.Point(180, 264);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(520, 214);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "";
+            this.richTextBoxContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.richTextBoxContent.Location = new System.Drawing.Point(180, 264);
+            this.richTextBoxContent.Name = "richTextBoxContent";
+            this.richTextBoxContent.Size = new System.Drawing.Size(520, 138);
+            this.richTextBoxContent.TabIndex = 5;
+            this.richTextBoxContent.Text = "";
             // 
-            // textBox1
+            // textBoxtitle
             // 
-            this.textBox1.Location = new System.Drawing.Point(180, 184);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(520, 49);
-            this.textBox1.TabIndex = 4;
+            this.textBoxtitle.Location = new System.Drawing.Point(180, 184);
+            this.textBoxtitle.Name = "textBoxtitle";
+            this.textBoxtitle.Size = new System.Drawing.Size(520, 49);
+            this.textBoxtitle.TabIndex = 4;
             // 
             // label3
             // 
@@ -111,18 +128,36 @@ namespace NoticeMyCar.SellACar.View
             this.label1.TabIndex = 0;
             this.label1.Text = "Zdjęcie:";
             // 
-            // AddingACarForSale
+            // iconButtonWhetherAdded
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.iconButtonWhetherAdded.BackColor = System.Drawing.Color.Transparent;
+            this.iconButtonWhetherAdded.FlatAppearance.BorderSize = 0;
+            this.iconButtonWhetherAdded.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonWhetherAdded.ForeColor = System.Drawing.Color.LightGray;
+            this.iconButtonWhetherAdded.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            this.iconButtonWhetherAdded.IconColor = System.Drawing.Color.LimeGreen;
+            this.iconButtonWhetherAdded.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonWhetherAdded.IconSize = 100;
+            this.iconButtonWhetherAdded.Location = new System.Drawing.Point(600, 25);
+            this.iconButtonWhetherAdded.Name = "iconButtonWhetherAdded";
+            this.iconButtonWhetherAdded.Size = new System.Drawing.Size(100, 100);
+            this.iconButtonWhetherAdded.TabIndex = 27;
+            this.iconButtonWhetherAdded.UseVisualStyleBackColor = false;
+            this.iconButtonWhetherAdded.Visible = false;
+            // 
+            // ViewA
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(22F, 42F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(753, 532);
             this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ForeColor = System.Drawing.Color.LightGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddingACarForSale";
-            this.Text = "AddingACarForSale";
-            this.Load += new System.EventHandler(this.AddingACarForSale_Load);
+            this.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.Name = "ViewA";
+            this.Text = "ViewA";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).EndInit();
@@ -133,11 +168,13 @@ namespace NoticeMyCar.SellACar.View
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button buttonCreate;
+        private System.Windows.Forms.PictureBox pictureBoxCar;
+        private System.Windows.Forms.RichTextBox richTextBoxContent;
+        private System.Windows.Forms.TextBox textBoxtitle;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBoxCar;
+        private FontAwesome.Sharp.IconButton iconButtonWhetherAdded;
     }
 }

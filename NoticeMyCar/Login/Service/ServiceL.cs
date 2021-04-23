@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 
 namespace NoticeMyCar.Services.Login
 {
-    public class ServiceL : IServiceL
+    class ServiceL : IServiceL
     {
-        private IModelL _model;
+        private readonly IModelL _model;
 
         public ServiceL(IModelL model)
         {
@@ -24,25 +24,35 @@ namespace NoticeMyCar.Services.Login
         public bool Login(IViewL view)
         {
             bool validLogin;
+            int i = 0;
+            string token = "";
 
             _model.email = view.email;
             _model.password = view.password;
 
-            string requesBody = "{" +
-                                    "\"email\": \"" + _model.email + "\"," +
-                                    "\"password\": \"" + _model.password + "\"" +
-                                 "}";
-
             var client = new RestClient("https://citygame.ga/api/auth/login");
             client.Timeout = -1;
+
             var request = new RestRequest(Method.POST);
-            request.AddHeader("Accept", "application/json");
-            request.AddParameter("application/json", requesBody, ParameterType.RequestBody);
+
+            request.AddQueryParameter("email", _model.email);
+            request.AddQueryParameter("password", _model.password);
+
             IRestResponse response = client.Execute(request);
 
             string[] result = response.Content.Split(new char[] { '"' });
 
-            Token.addToken(result[3]);
+            foreach (var r in result)
+            {
+                if (r.Equals("access_token"))
+                {
+                    token = result[i + 2];
+                    break;
+                }
+                i++;
+            }
+
+            Token.addToken(token);
 
             if (response.StatusCode.ToString().Equals("OK"))
                 validLogin = true;

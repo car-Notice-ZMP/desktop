@@ -1,7 +1,7 @@
 ﻿
-namespace NoticeMyCar.SellACar.View
+namespace NoticeMyCar.SellACars.WindowMain.View
 {
-    partial class ViewS
+    partial class ViewW
     {
         /// <summary>
         /// Required designer variable.
@@ -48,11 +48,11 @@ namespace NoticeMyCar.SellACar.View
             this.iconButton1.Location = new System.Drawing.Point(675, 0);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(78, 532);
-            this.iconButton1.TabIndex = 0;
+            this.iconButton1.TabIndex = 1;
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
-            // ViewS
+            // ViewW
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -60,10 +60,9 @@ namespace NoticeMyCar.SellACar.View
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(753, 532);
             this.Controls.Add(this.iconButton1);
-            this.ForeColor = System.Drawing.Color.LightGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ViewS";
-            this.Text = "ViewS";
+            this.Name = "ViewW";
+            this.Text = "ViewW";
             this.ResumeLayout(false);
             this.PerformLayout();
 

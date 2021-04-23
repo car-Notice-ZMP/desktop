@@ -44,7 +44,18 @@ namespace NoticeMyCar.Registration.View
 
         public void Report(bool report)
         {
+            if (report)
+            {
+                labelWhetherRegistrationWasSuccessful.Text = "Rejestracja się powiodła";
+                labelWhetherRegistrationWasSuccessful.ForeColor = Color.LimeGreen;
+            }
+            else
+            {
+                labelWhetherRegistrationWasSuccessful.Text = "Rejestracja się nie powiodła";
+                labelWhetherRegistrationWasSuccessful.ForeColor = Color.Red;
+            }
 
+            labelWhetherRegistrationWasSuccessful.Visible = true;
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)

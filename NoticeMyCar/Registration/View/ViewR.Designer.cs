@@ -48,6 +48,7 @@ namespace NoticeMyCar.Registration.View
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxRepeatPassword = new System.Windows.Forms.TextBox();
             this.buttonRegister = new System.Windows.Forms.Button();
+            this.labelWhetherRegistrationWasSuccessful = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -252,12 +253,24 @@ namespace NoticeMyCar.Registration.View
             this.buttonRegister.UseVisualStyleBackColor = false;
             this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
+            // labelWhetherRegistrationWasSuccessful
+            // 
+            this.labelWhetherRegistrationWasSuccessful.AutoSize = true;
+            this.labelWhetherRegistrationWasSuccessful.ForeColor = System.Drawing.Color.LightGray;
+            this.labelWhetherRegistrationWasSuccessful.Location = new System.Drawing.Point(294, 333);
+            this.labelWhetherRegistrationWasSuccessful.Name = "labelWhetherRegistrationWasSuccessful";
+            this.labelWhetherRegistrationWasSuccessful.Size = new System.Drawing.Size(26, 25);
+            this.labelWhetherRegistrationWasSuccessful.TabIndex = 37;
+            this.labelWhetherRegistrationWasSuccessful.Text = "X";
+            this.labelWhetherRegistrationWasSuccessful.Visible = false;
+            // 
             // ViewR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelWhetherRegistrationWasSuccessful);
             this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.textBoxRepeatPassword);
             this.Controls.Add(this.label6);
@@ -306,5 +319,6 @@ namespace NoticeMyCar.Registration.View
         private System.Windows.Forms.TextBox textBoxRepeatPassword;
         private System.Windows.Forms.Button buttonRegister;
         private System.Windows.Forms.Button buttonMinimized;
+        private System.Windows.Forms.Label labelWhetherRegistrationWasSuccessful;
     }
 }

@@ -1,7 +1,7 @@
 ﻿
-namespace NoticeMyCar.SellACar.View
+namespace NoticeMyCar.SellACars.Notices.View
 {
-    partial class PanelNotice
+    partial class ViewN
     {
         /// <summary>
         /// Required designer variable.
@@ -41,7 +41,7 @@ namespace NoticeMyCar.SellACar.View
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 150);
-            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
             // label1
@@ -52,7 +52,7 @@ namespace NoticeMyCar.SellACar.View
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.label1.Size = new System.Drawing.Size(89, 33);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 3;
             this.label1.Text = "Tytuł";
             // 
             // label2
@@ -63,12 +63,13 @@ namespace NoticeMyCar.SellACar.View
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label2.Size = new System.Drawing.Size(200, 197);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 4;
             this.label2.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu eleifend mi.";
             // 
-            // ViewPanelNotice
+            // ViewN
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(200, 400);
             this.Controls.Add(this.label2);
@@ -76,8 +77,8 @@ namespace NoticeMyCar.SellACar.View
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.LightGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ViewPanelNotice";
-            this.Text = "ViewPanelNotice";
+            this.Name = "ViewN";
+            this.Text = "ViewN";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

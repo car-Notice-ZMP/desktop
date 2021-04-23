@@ -134,23 +134,31 @@
     <Compile Include="Registration\View\ViewR.Designer.cs">
       <DependentUpon>ViewR.cs</DependentUpon>
     </Compile>
-    <Compile Include="SellACar\View\AddingACarForSale.cs">
+    <Compile Include="SellACars\AddNotice\CreateObjects.cs" />
+    <Compile Include="SellACars\AddNotice\ICreateObjects.cs" />
+    <Compile Include="SellACars\AddNotice\Model\IModelA.cs" />
+    <Compile Include="SellACars\AddNotice\Model\ModelA.cs" />
+    <Compile Include="SellACars\AddNotice\Presenter\PresenterA.cs" />
+    <Compile Include="SellACars\AddNotice\Service\IServiceA.cs" />
+    <Compile Include="SellACars\AddNotice\Service\ServiceA.cs" />
+    <Compile Include="SellACars\AddNotice\View\IViewA.cs" />
+    <Compile Include="SellACars\AddNotice\View\ViewA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SellACar\View\AddingACarForSale.Designer.cs">
-      <DependentUpon>AddingACarForSale.cs</DependentUpon>
+    <Compile Include="SellACars\AddNotice\View\ViewA.Designer.cs">
+      <DependentUpon>ViewA.cs</DependentUpon>
     </Compile>
-    <Compile Include="SellACar\View\PanelNotice.cs">
+    <Compile Include="SellACars\Notices\View\ViewN.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SellACar\View\PanelNotice.Designer.cs">
-      <DependentUpon>PanelNotice.cs</DependentUpon>
+    <Compile Include="SellACars\Notices\View\ViewN.Designer.cs">
+      <DependentUpon>ViewN.cs</DependentUpon>
     </Compile>
-    <Compile Include="SellACar\View\ViewS.cs">
+    <Compile Include="SellACars\WindowMain\View\ViewW.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SellACar\View\ViewS.Designer.cs">
-      <DependentUpon>ViewS.cs</DependentUpon>
+    <Compile Include="SellACars\WindowMain\View\ViewW.Designer.cs">
+      <DependentUpon>ViewW.cs</DependentUpon>
     </Compile>
     <Compile Include="Token.cs" />
     <EmbeddedResource Include="Account\View\ViewA.resx">
@@ -174,14 +182,14 @@
     <EmbeddedResource Include="Registration\View\ViewR.resx">
       <DependentUpon>ViewR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SellACar\View\AddingACarForSale.resx">
-      <DependentUpon>AddingACarForSale.cs</DependentUpon>
+    <EmbeddedResource Include="SellACars\AddNotice\View\ViewA.resx">
+      <DependentUpon>ViewA.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SellACar\View\PanelNotice.resx">
-      <DependentUpon>PanelNotice.cs</DependentUpon>
+    <EmbeddedResource Include="SellACars\Notices\View\ViewN.resx">
+      <DependentUpon>ViewN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SellACar\View\ViewS.resx">
-      <DependentUpon>ViewS.cs</DependentUpon>
+    <EmbeddedResource Include="SellACars\WindowMain\View\ViewW.resx">
+      <DependentUpon>ViewW.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -1,6 +1,6 @@
 ﻿using NoticeMyCar.Account.View;
 using NoticeMyCar.Login.View;
-using NoticeMyCar.SellACar.View;
+using NoticeMyCar.SellACars.WindowMain.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -86,7 +86,7 @@ namespace NoticeMyCar.Menu.View
 
         private void iconButtonSellACar_Click(object sender, EventArgs e)
         {
-            changePanel(new ViewS());
+            changePanel(new ViewW());
         }
     }
 }

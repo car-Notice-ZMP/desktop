@@ -2,12 +2,12 @@
 
 namespace NoticeMyCar.Login.View
 {
-    public interface IReportL
+    public interface IReport
     {
         void Report(bool report);
     }
 
-    public interface IViewL : IReportL
+    public interface IViewL : IReport
     {
         string email { get; }
         string password { get; }

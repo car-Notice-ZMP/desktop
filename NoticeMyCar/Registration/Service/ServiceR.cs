@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace NoticeMyCar.Registration.Service
 {
-    public class ServiceR : IServiceR
+    class ServiceR : IServiceR
     {
-        private IModelR _model;
+        private readonly IModelR _model;
 
         public ServiceR(IModelR model)
         {
