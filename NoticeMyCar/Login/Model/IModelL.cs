@@ -1,6 +1,6 @@
 ﻿namespace NoticeMyCar.Login.Model
 {
-    public interface IModelL
+    interface IModelL
     {
         string email { get; set; }
         string password { get; set; }

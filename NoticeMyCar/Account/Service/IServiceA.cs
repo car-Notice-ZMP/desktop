@@ -2,7 +2,7 @@
 
 namespace NoticeMyCar.Account.Service
 {
-    public interface IServiceA
+    interface IServiceA
     {
         IModelA Profile();
     }

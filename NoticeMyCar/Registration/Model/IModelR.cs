@@ -1,6 +1,6 @@
 ﻿namespace NoticeMyCar.Registration.Model
 {
-    public interface IModelR
+    interface IModelR
     {
         string email { get; set; }
         string name { get; set; }

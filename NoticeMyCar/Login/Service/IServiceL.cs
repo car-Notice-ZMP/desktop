@@ -2,7 +2,7 @@
 
 namespace NoticeMyCar.Services.Login
 {
-    public interface IServiceL
+    interface IServiceL
     {
         bool Login(IViewL view);
     }

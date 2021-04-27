@@ -17,12 +17,13 @@ namespace NoticeMyCar.Registration.Presenter
         public PresenterR(IViewR view, IServiceR service, IReport report)
         {
             _view = view;
-            _view.register += new EventHandler(iFormLogin_LoginEvent);
             _service = service;
             _report = report;
+
+            _view.register += new EventHandler(provideTheData);
         }
 
-        void iFormLogin_LoginEvent(object sender, EventArgs e)
+        void provideTheData(object sender, EventArgs e)
         {
             if (_service.Register(_view))
                 _report.Report(true);

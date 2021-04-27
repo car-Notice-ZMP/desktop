@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NoticeMyCar.Registration.Model
 {
-    public class ModelR : IModelR
+    class ModelR : IModelR
     {
         public string email { get; set; }
         public string password { get; set; }

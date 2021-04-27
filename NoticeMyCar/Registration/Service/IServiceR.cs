@@ -2,7 +2,7 @@
 
 namespace NoticeMyCar.Registration.Service
 {
-    public interface IServiceR
+    interface IServiceR
     {
         bool Register(IViewR view);
     }

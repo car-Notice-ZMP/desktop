@@ -29,28 +29,29 @@ namespace NoticeMyCar.SellACars.WindowMain.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButtonAddNotice = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
-            // iconButton1
+            // iconButtonAddNotice
             // 
-            this.iconButton1.AutoSize = true;
-            this.iconButton1.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.Black;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 72;
-            this.iconButton1.Location = new System.Drawing.Point(675, 0);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(78, 532);
-            this.iconButton1.TabIndex = 1;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.iconButtonAddNotice.AutoSize = true;
+            this.iconButtonAddNotice.BackColor = System.Drawing.Color.Transparent;
+            this.iconButtonAddNotice.Dock = System.Windows.Forms.DockStyle.Right;
+            this.iconButtonAddNotice.FlatAppearance.BorderSize = 0;
+            this.iconButtonAddNotice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.iconButtonAddNotice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonAddNotice.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonAddNotice.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.iconButtonAddNotice.IconColor = System.Drawing.Color.Black;
+            this.iconButtonAddNotice.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonAddNotice.IconSize = 72;
+            this.iconButtonAddNotice.Location = new System.Drawing.Point(675, 0);
+            this.iconButtonAddNotice.Margin = new System.Windows.Forms.Padding(0);
+            this.iconButtonAddNotice.Name = "iconButtonAddNotice";
+            this.iconButtonAddNotice.Size = new System.Drawing.Size(78, 532);
+            this.iconButtonAddNotice.TabIndex = 1;
+            this.iconButtonAddNotice.UseVisualStyleBackColor = false;
+            this.iconButtonAddNotice.Click += new System.EventHandler(this.iconButtonAddNotice_Click);
             // 
             // ViewW
             // 
@@ -59,7 +60,7 @@ namespace NoticeMyCar.SellACars.WindowMain.View
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(753, 532);
-            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.iconButtonAddNotice);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ViewW";
             this.Text = "ViewW";
@@ -70,6 +71,6 @@ namespace NoticeMyCar.SellACars.WindowMain.View
 
         #endregion
 
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButtonAddNotice;
     }
 }

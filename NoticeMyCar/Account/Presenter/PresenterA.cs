@@ -17,12 +17,13 @@ namespace NoticeMyCar.Account.Presenter
         public PresenterA(IViewA view, IServiceA service, IData data)
         {
             _view = view;
-            _view.profile += new EventHandler(iFormLogin_LoginEvent);
             _service = service;
             _data = data;
+
+            _view.profile += new EventHandler(giveMeTheData);
         }
 
-        void iFormLogin_LoginEvent(object sender, EventArgs e)
+        void giveMeTheData(object sender, EventArgs e)
         {
             _data.Data(_service.Profile());
         }

@@ -17,12 +17,13 @@ namespace NoticeMyCar.SellACars.AddNotice.Presenter
         public PresenterA(IViewA view, IServiceA service, IReport report)
         {
             _view = view;
-            _view.notice += new EventHandler(iFormLogin_LoginEvent);
             _service = service;
             _report = report;
+
+            _view.notice += new EventHandler(provideTheData);
         }
 
-        void iFormLogin_LoginEvent(object sender, EventArgs e)
+        void provideTheData(object sender, EventArgs e)
         {
             if (_service.Notice(_view))
                 _report.Report(true);

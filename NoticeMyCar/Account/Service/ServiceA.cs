@@ -1,4 +1,6 @@
-﻿using NoticeMyCar.Account.Model;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using NoticeMyCar.Account.Model;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -30,7 +32,9 @@ namespace NoticeMyCar.Account.Service
             request.AddHeader("Authorization", "Bearer " + Token.returnToken());
             IRestResponse response = client.Execute(request);
 
-            string[] result = response.Content.Split(new char[] { '"' });
+            JObject decodedResponse = JObject.Parse(response.Content);
+
+            string[] result = decodedResponse.ToString().Split(new char[] { '"' });
 
             foreach (var r in result)
             {

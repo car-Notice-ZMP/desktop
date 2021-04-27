@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NoticeMyCar.SellACars.AddNotice.Model
 {
-    public class ModelA : IModelA
+    class ModelA : IModelA
     {
         public string image { get; set; }
         public string title { get; set; }

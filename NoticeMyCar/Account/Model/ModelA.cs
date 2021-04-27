@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NoticeMyCar.Account.Model
 {
-    public class ModelA : IModelA
+    class ModelA : IModelA
     {
         public string avatar { get; set; }
         public string name { get; set; }

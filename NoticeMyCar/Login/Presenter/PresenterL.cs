@@ -17,12 +17,13 @@ namespace NoticeMyCar.Login.Presenter
         public PresenterL(IViewL view, IServiceL service, IReport report)
         {
             _view = view;
-            _view.login += new EventHandler(iFormLogin_LoginEvent);
             _service = service;
             _report = report;
+
+            _view.login += new EventHandler(checkLogin);
         }
 
-        void iFormLogin_LoginEvent(object sender, EventArgs e)
+        void checkLogin(object sender, EventArgs e)
         {
             if (_service.Login(_view))
                 _report.Report(true);

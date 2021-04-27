@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NoticeMyCar.Login.Model
 {
-    public class ModelL : IModelL
+    class ModelL : IModelL
     {
         public string email { get; set; }
         public string password { get; set; }

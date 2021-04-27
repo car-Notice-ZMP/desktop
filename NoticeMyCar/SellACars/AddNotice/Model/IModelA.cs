@@ -2,7 +2,7 @@
 
 namespace NoticeMyCar.SellACars.AddNotice.Model
 {
-    public interface IModelA
+    interface IModelA
     {
         string content { get; set; }
         string image { get; set; }
