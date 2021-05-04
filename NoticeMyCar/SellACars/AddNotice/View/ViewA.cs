@@ -32,12 +32,47 @@ namespace NoticeMyCar.SellACars.AddNotice.View
 
         public string title
         {
-            get { return textBoxtitle.Text; }
+            get { return textBoxTitle.Text; }
         }
 
         public string content
         {
             get { return richTextBoxContent.Text; }
+        }
+
+        public string mark
+        {
+            get { return textBoxMark.Text; }
+        }
+
+        public string model
+        {
+            get { return textBoxModel.Text; }
+        }
+
+        public string color
+        {
+            get { return textBoxColor.Text; }
+        }
+
+        public string body
+        {
+            get { return textBoxBody.Text; }
+        }
+
+        public string mileage
+        {
+            get { return textBoxMileage.Text; }
+        }
+
+        public string price
+        {
+            get { return textBoxPrice.Text; }
+        }
+
+        public string year
+        {
+            get { return textBoxYear.Text; }
         }
 
         public void Report(bool report)

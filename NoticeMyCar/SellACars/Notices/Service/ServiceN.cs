@@ -33,7 +33,7 @@ namespace NoticeMyCar.SellACars.Notices.Service
             string[] result = response.Content.Split(new char[] { '"' });
 
             foreach (var r in result)
-                if (r.Equals("id"))
+                if (r.Equals("title"))
                     numberOfNotices++;
 
             return numberOfNotices;
@@ -42,6 +42,7 @@ namespace NoticeMyCar.SellACars.Notices.Service
         public IModelN Notice(int id)
         {
             int i = 0;
+            bool j = true;
             int index = -1;
             bool whetherThereWasAnId = false;
 
@@ -57,11 +58,17 @@ namespace NoticeMyCar.SellACars.Notices.Service
 
             foreach (var r in result)
             {
-                if (r.Equals("id"))
+                if (r.Equals("title"))
                     index++;
 
-                if (r.Equals("id") && index == id)
+                if (r.Equals("title") && index == id)
                 {
+                    _model.id = Int32.Parse(
+                        result[i - 1]
+                        .Remove(0, 1)
+                        .Replace(",", "")
+                    );
+
                     whetherThereWasAnId = true;
                 }
 
@@ -69,11 +76,36 @@ namespace NoticeMyCar.SellACars.Notices.Service
                 {
                     if (r.Equals("title"))
                         _model.title = result[i + 2];
-                    else if (r.Equals("content"))
-                        _model.contenet = result[i + 2];
+                    else if (r.Equals("message"))
+                        _model.message = result[i + 2];
+                    else if (r.Equals("mark"))
+                        _model.mark = result[i + 2];
+                    else if (r.Equals("model"))
+                        _model.model = result[i + 2];
+                    else if (r.Equals("color"))
+                        _model.color = result[i + 2];
+                    else if (r.Equals("year"))
+                        _model.year = result[i + 1]
+                            .ToString()
+                            .Remove(0, 1)
+                            .Replace(",", "");
+                    else if (r.Equals("mileage"))
+                        _model.mileage = result[i + 1]
+                            .ToString()
+                            .Remove(0, 1)
+                            .Replace(",", "");
+                    else if (r.Equals("price"))
+                        _model.price = result[i + 1]
+                            .ToString()
+                            .Remove(0, 1)
+                            .Replace(",", "");
+                    else if (r.Equals("body"))
+                        _model.body = result[i + 2];
                     else if (r.Equals("image_url"))
-                    {
                         _model.image_url = result[i + 2];
+                    else if (r.Equals("name"))
+                    {
+                        _model.name = result[i + 2];
                         break;
                     }
                 }
@@ -82,6 +114,33 @@ namespace NoticeMyCar.SellACars.Notices.Service
             }
 
             return _model;
+        }
+
+        public void DeleteNotice(int id)
+        {
+            var client = new RestClient("https://citygame.ga/api/notices/delete/" + id.ToString());
+            client.Timeout = -1;
+            var request = new RestRequest(Method.DELETE);
+            request.AddHeader("Authorization", "Bearer " + Token.returnToken());
+            client.Execute(request);
+        }
+
+        public bool StatusNotice(int id)
+        {
+            bool status;
+
+            var client = new RestClient("https://citygame.ga/api/notices/status/" + id.ToString());
+            client.Timeout = -1;
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Authorization", "Bearer " + Token.returnToken());
+            IRestResponse response = client.Execute(request);
+
+            if (response.StatusCode.ToString().Equals("OK"))
+                status = true;
+            else
+                status = false;
+
+            return status;
         }
     }
 }

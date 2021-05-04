@@ -44,6 +44,7 @@ namespace NoticeMyCar.Menu.View
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             iconButtonAccount = new FontAwesome.Sharp.IconButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             iconButtonObserved = new FontAwesome.Sharp.IconButton();
@@ -179,6 +180,7 @@ namespace NoticeMyCar.Menu.View
             // panelTopMenu
             // 
             this.panelTopMenu.BackColor = System.Drawing.Color.Black;
+            this.panelTopMenu.Controls.Add(this.label1);
             this.panelTopMenu.Controls.Add(this.buttonMinimized);
             this.panelTopMenu.Controls.Add(this.buttonWindow);
             this.panelTopMenu.Controls.Add(this.buttonClose);
@@ -295,6 +297,17 @@ namespace NoticeMyCar.Menu.View
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.LightGray;
+            this.label1.Location = new System.Drawing.Point(12, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 15);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Notice My Car";
+            // 
             // ViewM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -311,6 +324,7 @@ namespace NoticeMyCar.Menu.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelTopMenu.ResumeLayout(false);
+            this.panelTopMenu.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -330,5 +344,6 @@ namespace NoticeMyCar.Menu.View
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label1;
     }
 }

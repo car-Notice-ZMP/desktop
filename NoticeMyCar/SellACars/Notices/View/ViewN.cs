@@ -15,8 +15,10 @@ namespace NoticeMyCar.SellACars.Notices.View
 {
     public partial class ViewN : Form, IViewN
     {
-        public event EventHandler notice;
+        public event EventHandler noticeAndId;
         public event EventHandler giveTheNumberOfNotices;
+        public event EventHandler deleteNotice;
+        public event EventHandler statusNotice;
 
         int numberOfUserNotices;
         int index = 0;
@@ -39,15 +41,36 @@ namespace NoticeMyCar.SellACars.Notices.View
             numberOfUserNotices = numberOfNotices;
         }
 
+        public void Status(bool status)
+        {
+            if (status)
+                iconButtonStatus.IconColor = Color.LimeGreen;
+        }
+
         public void Data(IModelN data)
         {
+            index = data.id;
+
+            if (data.name.Equals("aktywne"))
+                iconButtonStatus.IconColor = Color.LimeGreen;
+            else
+                iconButtonStatus.IconColor = Color.Red;
+
             WebRequest request = WebRequest.Create(data.image_url);
             var response = request.GetResponse();
             var str = response.GetResponseStream();
 
             pictureBox1.Image = Bitmap.FromStream(str);
-            label1.Text = data.title;
-            label2.Text = data.contenet;
+
+            labelTitle.Text = data.title;
+            labelMark.Text = data.mark;
+            labelModel.Text = data.model;
+            labelColor.Text = data.color;
+            labelBody.Text = data.body;
+            labelMileage.Text = data.mileage;
+            labelPrice.Text = data.price;
+            labelYear.Text = data.year;
+            labelContent.Text = data.message;
         }
 
         public int theNumberOfMyNotices()
@@ -59,8 +82,20 @@ namespace NoticeMyCar.SellACars.Notices.View
         public Form Notices(int id)
         {
             index = id;
-            notice(this, EventArgs.Empty);
+            noticeAndId(this, EventArgs.Empty);
             return this;
+        }
+
+        private void iconButtonDelete_Click(object sender, EventArgs e)
+        {
+            deleteNotice(this, EventArgs.Empty);
+            Close();
+        }
+
+        private void iconButtonStatus_Click(object sender, EventArgs e)
+        {
+            if (iconButtonStatus.IconColor == Color.Red)
+                statusNotice(this, EventArgs.Empty);
         }
     }
 }

@@ -28,7 +28,14 @@ namespace NoticeMyCar.SellACars.AddNotice.Service
 
             _model.image = view.image;
             _model.title = view.title;
-            _model.content = view.content;
+            _model.message = view.content;
+            _model.mark = view.mark;
+            _model.model = view.model;
+            _model.color = view.color;
+            _model.body = view.body;
+            _model.mileage = view.mileage;
+            _model.price = view.price;
+            _model.year = view.year;
 
             var client = new RestClient("https://citygame.ga/api/notices/store");
             client.Timeout = -1;
@@ -36,7 +43,14 @@ namespace NoticeMyCar.SellACars.AddNotice.Service
             var request = new RestRequest(Method.POST);
 
             request.AddQueryParameter("title", _model.title);
-            request.AddQueryParameter("content", _model.content);
+            request.AddQueryParameter("message", _model.message);
+            request.AddQueryParameter("mark", _model.mark);
+            request.AddQueryParameter("model", _model.model);
+            request.AddQueryParameter("color", _model.color);
+            request.AddQueryParameter("body", _model.body);
+            request.AddQueryParameter("mileage", _model.mileage);
+            request.AddQueryParameter("price", _model.price);
+            request.AddQueryParameter("year", _model.year);
 
             request.AddHeader("Authorization", "Bearer " + Token.returnToken());
             request.AddFile("image", _model.image);

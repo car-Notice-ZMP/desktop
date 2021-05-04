@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 
 namespace NoticeMyCar.SellACars.AddNotice.View
 {
@@ -10,9 +9,16 @@ namespace NoticeMyCar.SellACars.AddNotice.View
 
     public interface IViewA : IReport
     {
+        string body { get; }
+        string color { get; }
         string content { get; }
         string image { get; }
+        string mark { get; }
+        string mileage { get; }
+        string model { get; }
+        string price { get; }
         string title { get; }
+        string year { get; }
 
         event EventHandler notice;
     }
