@@ -97,12 +97,6 @@ namespace NoticeMyCar.SellACars.AddNotice.View
                 notice(this, EventArgs.Empty);
         }
 
-        /*private byte[] ImageToByte()
-        {
-            ImageConverter converter = new ImageConverter();
-            return (byte[])converter.ConvertTo(pictureBoxCar.Image, typeof(byte[]));
-        }*/
-
         private void pictureBoxCar_DragDrop(object sender, DragEventArgs e)
         {
             var info = e.Data.GetData(DataFormats.FileDrop);

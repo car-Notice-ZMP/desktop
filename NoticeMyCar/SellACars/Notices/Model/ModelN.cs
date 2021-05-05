@@ -19,6 +19,7 @@ namespace NoticeMyCar.SellACars.Notices.Model
         public string body { get; set; }
         public string mileage { get; set; }
         public string price { get; set; }
+        public string image { get; set; }
         public string year { get; set; }
         public string name { get; set; }
     }

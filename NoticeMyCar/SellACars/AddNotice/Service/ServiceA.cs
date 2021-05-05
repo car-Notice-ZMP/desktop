@@ -52,8 +52,9 @@ namespace NoticeMyCar.SellACars.AddNotice.Service
             request.AddQueryParameter("price", _model.price);
             request.AddQueryParameter("year", _model.year);
 
-            request.AddHeader("Authorization", "Bearer " + Token.returnToken());
             request.AddFile("image", _model.image);
+            
+            request.AddHeader("Authorization", "Bearer " + Token.returnToken());
 
             IRestResponse response = client.Execute(request);
 

@@ -29,11 +29,11 @@ namespace NoticeMyCar.SellACars.Notices.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCar = new System.Windows.Forms.PictureBox();
             this.labelTitle = new System.Windows.Forms.Label();
             this.labelContent = new System.Windows.Forms.Label();
             this.iconButtonDelete = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.iconButtonEdit = new FontAwesome.Sharp.IconButton();
             this.iconButtonStatus = new FontAwesome.Sharp.IconButton();
             this.labelMark = new System.Windows.Forms.Label();
             this.labelModel = new System.Windows.Forms.Label();
@@ -51,18 +51,20 @@ namespace NoticeMyCar.SellACars.Notices.View
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBoxCar
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 31);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 113);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxCar.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxCar.Location = new System.Drawing.Point(12, 31);
+            this.pictureBoxCar.Name = "pictureBoxCar";
+            this.pictureBoxCar.Size = new System.Drawing.Size(200, 113);
+            this.pictureBoxCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxCar.TabIndex = 2;
+            this.pictureBoxCar.TabStop = false;
+            this.pictureBoxCar.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBoxCar_DragDrop);
+            this.pictureBoxCar.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBoxCar_DragEnter);
             // 
             // labelTitle
             // 
@@ -104,21 +106,22 @@ namespace NoticeMyCar.SellACars.Notices.View
             this.iconButtonDelete.UseVisualStyleBackColor = false;
             this.iconButtonDelete.Click += new System.EventHandler(this.iconButtonDelete_Click);
             // 
-            // iconButton2
+            // iconButtonEdit
             // 
-            this.iconButton2.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.iconButton2.IconColor = System.Drawing.Color.LightGray;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 22;
-            this.iconButton2.Location = new System.Drawing.Point(507, 0);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(48, 30);
-            this.iconButton2.TabIndex = 6;
-            this.iconButton2.UseVisualStyleBackColor = false;
+            this.iconButtonEdit.BackColor = System.Drawing.Color.Transparent;
+            this.iconButtonEdit.FlatAppearance.BorderSize = 0;
+            this.iconButtonEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
+            this.iconButtonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonEdit.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.iconButtonEdit.IconColor = System.Drawing.Color.LightGray;
+            this.iconButtonEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonEdit.IconSize = 22;
+            this.iconButtonEdit.Location = new System.Drawing.Point(507, 0);
+            this.iconButtonEdit.Name = "iconButtonEdit";
+            this.iconButtonEdit.Size = new System.Drawing.Size(48, 30);
+            this.iconButtonEdit.TabIndex = 6;
+            this.iconButtonEdit.UseVisualStyleBackColor = false;
+            this.iconButtonEdit.Click += new System.EventHandler(this.iconButtonEdit_Click);
             // 
             // iconButtonStatus
             // 
@@ -332,16 +335,16 @@ namespace NoticeMyCar.SellACars.Notices.View
             this.Controls.Add(this.labelModel);
             this.Controls.Add(this.labelMark);
             this.Controls.Add(this.iconButtonStatus);
-            this.Controls.Add(this.iconButton2);
+            this.Controls.Add(this.iconButtonEdit);
             this.Controls.Add(this.iconButtonDelete);
             this.Controls.Add(this.labelContent);
             this.Controls.Add(this.labelTitle);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxCar);
             this.ForeColor = System.Drawing.Color.LightGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ViewN";
             this.Text = "ViewN";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,11 +352,11 @@ namespace NoticeMyCar.SellACars.Notices.View
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxCar;
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Label labelContent;
         private FontAwesome.Sharp.IconButton iconButtonDelete;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton iconButtonEdit;
         private FontAwesome.Sharp.IconButton iconButtonStatus;
         private System.Windows.Forms.Label labelMark;
         private System.Windows.Forms.Label labelModel;

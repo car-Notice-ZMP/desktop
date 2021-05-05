@@ -1,5 +1,6 @@
 ﻿using NoticeMyCar.SellACars.Notices.Model;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace NoticeMyCar.SellACars.Notices.View
@@ -19,13 +20,20 @@ namespace NoticeMyCar.SellACars.Notices.View
         void Status(bool status);
     }
 
-    public interface IViewN : IData, INumberOfNotices, IStatus
+    public interface IUpdate
+    {
+        void Update(bool change);
+    }
+
+    public interface IViewN : IData, INumberOfNotices, IStatus, IUpdate
     {
         int id { get; }
+        List<string> update { get; }
 
         event EventHandler giveTheNumberOfNotices;
         event EventHandler noticeAndId;
-        event EventHandler deleteNotice;
-        event EventHandler statusNotice;
+        event EventHandler delete;
+        event EventHandler status;
+        event EventHandler edit;
     }
 }

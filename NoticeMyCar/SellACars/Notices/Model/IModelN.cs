@@ -5,6 +5,7 @@
         string body { get; set; }
         string color { get; set; }
         int id { get; set; }
+        string image { get; set; }
         string image_url { get; set; }
         string mark { get; set; }
         string message { get; set; }

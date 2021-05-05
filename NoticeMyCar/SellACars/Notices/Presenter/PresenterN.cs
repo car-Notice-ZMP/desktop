@@ -15,19 +15,22 @@ namespace NoticeMyCar.SellACars.Notices.Presenter
         private readonly IData _data;
         private readonly INumberOfNotices _numberOfNotices;
         private readonly IStatus _status;
+        private readonly IUpdate _update;
 
-        public PresenterN(IViewN view, IServiceN service, IData data, INumberOfNotices numberOfNotices, IStatus status)
+        public PresenterN(IViewN view, IServiceN service, IData data, INumberOfNotices numberOfNotices, IStatus status, IUpdate update)
         {
             _view = view;
             _service = service;
             _data = data;
             _numberOfNotices = numberOfNotices;
             _status = status;
+            _update = update;
 
             _view.noticeAndId += new EventHandler(giveMeTheData);
             _view.giveTheNumberOfNotices += new EventHandler(giveTheNumberOfNotices);
-            _view.deleteNotice += new EventHandler(deleteTheNotice);
-            _view.statusNotice += new EventHandler(freshStatus);
+            _view.delete += new EventHandler(deleteTheNotice);
+            _view.status += new EventHandler(freshStatus);
+            _view.edit += new EventHandler(edit);
         }
 
         void giveTheNumberOfNotices(object sender, EventArgs e)
@@ -51,6 +54,14 @@ namespace NoticeMyCar.SellACars.Notices.Presenter
                 _status.Status(true);
             else
                 _status.Status(false);
+        }
+
+        void edit(object sender, EventArgs e)
+        {
+            if (_service.Update(_view.id, _view.update))
+                _update.Update(true);
+            else
+                _update.Update(false);
         }
     }
 }
