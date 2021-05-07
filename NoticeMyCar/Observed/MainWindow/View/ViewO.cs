@@ -1,4 +1,4 @@
-﻿using NoticeMyCar.BuyACar.Notice.View;
+﻿using NoticeMyCar.Observed.Notice.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,16 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NoticeMyCar.BuyACa.WindowMain.View
+namespace NoticeMyCar.Observed.MainWindow.View
 {
-    public partial class ViewB : Form
+    public partial class ViewO : Form
     {
         List<Form> notices = new List<Form>();
         int page = 0;
         int newPage = 0;
         ViewN viewN = new ViewN();
 
-        public ViewB()
+        public ViewO()
         {
             InitializeComponent();
             settingUpNotices();
@@ -33,7 +33,7 @@ namespace NoticeMyCar.BuyACa.WindowMain.View
             int displayedNumberOfNotices;
             int availableNotices;
 
-            availableNotices = viewN.theNumberOfNotices();
+            availableNotices = viewN.theNumberOfMyNotices();
 
             if (availableNoticeSpace > availableNotices)
                 displayedNumberOfNotices = availableNotices;
@@ -171,9 +171,25 @@ namespace NoticeMyCar.BuyACa.WindowMain.View
             }
         }
 
+        private Form activeForm = null;
+
+        private void changePanel(Form panel)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+
+            activeForm = panel;
+            panel.TopLevel = false;
+            panel.Dock = DockStyle.Fill;
+            Controls.Add(panel);
+            Tag = panel;
+            panel.BringToFront();
+            panel.Show();
+        }
+
         private void iconButtonAngleRight_Click(object sender, EventArgs e)
         {
-            if (viewN.theNumberOfNotices() != notices.Count && (page + 1) * spaceForAnnouncements() != notices.Count)
+            if (viewN.theNumberOfMyNotices() != notices.Count && (page + 1) * spaceForAnnouncements() != notices.Count)
                 settingUpNotices();
             else
                 nextPage();

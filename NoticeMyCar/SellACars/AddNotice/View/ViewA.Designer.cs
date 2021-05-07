@@ -257,7 +257,7 @@ namespace NoticeMyCar.SellACars.AddNotice.View
             // 
             // pictureBoxCar
             // 
-            this.pictureBoxCar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.pictureBoxCar.BackColor = System.Drawing.Color.Gray;
             this.pictureBoxCar.Location = new System.Drawing.Point(126, 29);
             this.pictureBoxCar.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBoxCar.Name = "pictureBoxCar";

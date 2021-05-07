@@ -1,12 +1,12 @@
-﻿using NoticeMyCar.BuyACar.Notice.Service;
-using NoticeMyCar.BuyACar.Notice.View;
+﻿using NoticeMyCar.Observed.Notice.Service;
+using NoticeMyCar.Observed.Notice.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NoticeMyCar.BuyACar.Notice.Presenter
+namespace NoticeMyCar.Observed.Notice.Presenter
 {
     class PresenterN
     {
@@ -14,19 +14,16 @@ namespace NoticeMyCar.BuyACar.Notice.Presenter
         private readonly IServiceN _service;
         private readonly IData _data;
         private readonly INumberOfNotices _numberOfNotices;
-        private readonly IWhetherAddedDoWatchlist _whetherAddedDoWatchlist;
 
-        public PresenterN(IViewN view, IServiceN service, IData data, INumberOfNotices numberOfNotices, IWhetherAddedDoWatchlist whetherAddedDoWatchlist)
+        public PresenterN(IViewN view, IServiceN service, IData data, INumberOfNotices numberOfNotices)
         {
             _view = view;
             _service = service;
             _data = data;
             _numberOfNotices = numberOfNotices;
-            _whetherAddedDoWatchlist = whetherAddedDoWatchlist;
 
             _view.noticeAndId += new EventHandler(giveMeTheData);
             _view.giveTheNumberOfNotices += new EventHandler(giveTheNumberOfNotices);
-            _view.addinToWatched += new EventHandler(addToFollowed);
         }
 
         void giveTheNumberOfNotices(object sender, EventArgs e)
@@ -40,14 +37,6 @@ namespace NoticeMyCar.BuyACar.Notice.Presenter
                 _service.Notice(
                     _view.id)
                 );
-        }
-
-        void addToFollowed(object sender, EventArgs e)
-        {
-            if (_service.AddToFollowed(_view.id))
-                _whetherAddedDoWatchlist.Watched(true);
-            else
-                _whetherAddedDoWatchlist.Watched(false);
         }
     }
 }

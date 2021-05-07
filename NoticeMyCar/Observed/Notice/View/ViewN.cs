@@ -1,4 +1,4 @@
-﻿using NoticeMyCar.BuyACar.Notice.Model;
+﻿using NoticeMyCar.Observed.Notice.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,15 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NoticeMyCar.BuyACar.Notice.View
+namespace NoticeMyCar.Observed.Notice.View
 {
     public partial class ViewN : Form, IViewN
     {
         public event EventHandler giveTheNumberOfNotices;
         public event EventHandler noticeAndId;
-        public event EventHandler addinToWatched;
-
-        Panel panel = new Panel();
 
         int numberOfUserNotices;
         int index = 0;
@@ -26,10 +23,6 @@ namespace NoticeMyCar.BuyACar.Notice.View
         public ViewN()
         {
             InitializeComponent();
-
-            panel.Location = new Point(418, 12);
-            panel.Size = new Size(100, 25);
-            panel.BackColor = ColorTranslator.FromHtml("#808080");
 
             CreateObjects createObjects = new CreateObjects();
             createObjects.FacityFactory(this);
@@ -73,16 +66,16 @@ namespace NoticeMyCar.BuyACar.Notice.View
             labelContent.Text = data.message;
         }
 
-        public void Watched(bool b)
+        private System.IO.Stream convertToStream(string link)
         {
-            if (b)
-                MessageBox.Show("Dodano do obserwowanych ogłoszeń.", "Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-                MessageBox.Show("Nie dodano do obserwowanych ogłoszeń.", "Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            WebRequest request = WebRequest.Create(link);
+            var response = request.GetResponse();
+            var str = response.GetResponseStream();
+
+            return str;
         }
 
-
-        public int theNumberOfNotices()
+        public int theNumberOfMyNotices()
         {
             giveTheNumberOfNotices(this, EventArgs.Empty);
             return numberOfUserNotices;
@@ -95,28 +88,5 @@ namespace NoticeMyCar.BuyACar.Notice.View
             return this;
         }
 
-        private System.IO.Stream convertToStream(string link)
-        {
-            WebRequest request = WebRequest.Create(link);
-            var response = request.GetResponse();
-            var str = response.GetResponseStream();
-
-            return str;
-        }
-
-        private void pictureBoxAuthorAvatar_MouseEnter(object sender, EventArgs e)
-        {
-            panelDataAuthor.Show();
-        }
-
-        private void pictureBoxAuthorAvatar_MouseLeave(object sender, EventArgs e)
-        {
-            panelDataAuthor.Hide();
-        }
-
-        private void iconButtonAddinToWatched_Click(object sender, EventArgs e)
-        {
-            addinToWatched(this, EventArgs.Empty);
-        }
     }
 }

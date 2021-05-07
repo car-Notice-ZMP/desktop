@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
-using NoticeMyCar.BuyACar.Notice.Model;
+using NoticeMyCar.Observed.Notice.Model;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NoticeMyCar.BuyACar.Notice.Service
+namespace NoticeMyCar.Observed.Notice.Service
 {
     class ServiceN : IServiceN
     {
@@ -21,17 +21,31 @@ namespace NoticeMyCar.BuyACar.Notice.Service
         public int NumberOfNotices()
         {
             int numberOfNotices = 0;
+            int i = 0;
 
-            var client = new RestClient("https://citygame.ga/api/notices/all");
+            var client = new RestClient("https://citygame.ga/api/fav/counter");
             client.Timeout = -1;
             var request = new RestRequest(Method.GET);
+            request.AddHeader("Authorization", "Bearer " + Token.returnToken());
             IRestResponse response = client.Execute(request);
 
-            string[] result = response.Content.Split(new char[] { '"' });
+            JObject decodedResponse = JObject.Parse(response.Content);
+
+            string[] result = decodedResponse.ToString().Split(new char[] { '"' });
 
             foreach (var r in result)
-                if (r.Equals("title"))
-                    numberOfNotices++;
+            {
+                if (r.Equals("Ilość polubień"))
+                {
+                    numberOfNotices = Int32.Parse(
+                        result[i + 1]
+                        .Remove(0, 1)
+                        .Trim(new Char[] { '}' })
+                    );
+                }
+
+                i++;
+            }
 
             return numberOfNotices;
         }
@@ -42,9 +56,10 @@ namespace NoticeMyCar.BuyACar.Notice.Service
             int index = -1;
             bool whetherThereWasAnId = false;
 
-            var client = new RestClient("https://citygame.ga/api/notices/all");
+            var client = new RestClient("https://citygame.ga/api/fav/get");
             client.Timeout = -1;
             var request = new RestRequest(Method.GET);
+            request.AddHeader("Authorization", "Bearer " + Token.returnToken());
             IRestResponse response = client.Execute(request);
 
             JObject decodedResponse = JObject.Parse(response.Content);
@@ -62,6 +77,7 @@ namespace NoticeMyCar.BuyACar.Notice.Service
                         result[i - 1]
                         .Remove(0, 1)
                         .Replace(",", "")
+                        .Trim()
                     );
 
                     whetherThereWasAnId = true;
@@ -118,24 +134,6 @@ namespace NoticeMyCar.BuyACar.Notice.Service
             }
 
             return _model;
-        }
-
-        public bool AddToFollowed(int id)
-        {
-            bool whetherAddedDoWatchlist;
-
-            var client = new RestClient("https://citygame.ga/api/fav/" + id.ToString() + "/store");
-            client.Timeout = -1;
-            var request = new RestRequest(Method.POST);
-            request.AddHeader("Authorization", "Bearer " + Token.returnToken());
-            IRestResponse response = client.Execute(request);
-
-            if (response.StatusCode.ToString().Equals("OK"))
-                whetherAddedDoWatchlist = true;
-            else
-                whetherAddedDoWatchlist = false;
-
-            return whetherAddedDoWatchlist;
         }
     }
 }

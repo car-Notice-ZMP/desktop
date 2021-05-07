@@ -138,6 +138,26 @@
     <Compile Include="Menu\View\ViewM.Designer.cs">
       <DependentUpon>ViewM.cs</DependentUpon>
     </Compile>
+    <Compile Include="Observed\MainWindow\View\ViewO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Observed\MainWindow\View\ViewO.Designer.cs">
+      <DependentUpon>ViewO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Observed\Notice\CreateObjects.cs" />
+    <Compile Include="Observed\Notice\ICreateObjects.cs" />
+    <Compile Include="Observed\Notice\Model\IModelN.cs" />
+    <Compile Include="Observed\Notice\Model\ModelN.cs" />
+    <Compile Include="Observed\Notice\Presenter\PresenterN.cs" />
+    <Compile Include="Observed\Notice\Service\IServiceN.cs" />
+    <Compile Include="Observed\Notice\Service\ServiceN.cs" />
+    <Compile Include="Observed\Notice\View\IViewN.cs" />
+    <Compile Include="Observed\Notice\View\ViewN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Observed\Notice\View\ViewN.Designer.cs">
+      <DependentUpon>ViewN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration\CreateObjects.cs" />
@@ -204,6 +224,12 @@
     <EmbeddedResource Include="Menu\View\ViewM.resx">
       <DependentUpon>ViewM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Observed\MainWindow\View\ViewO.resx">
+      <DependentUpon>ViewO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Observed\Notice\View\ViewN.resx">
+      <DependentUpon>ViewN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -239,8 +265,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Observed\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

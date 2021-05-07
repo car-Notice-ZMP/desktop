@@ -41,3 +41,5 @@ D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.BuyACar.Notice.View.View
 D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.BuyACa.WindowMain.View.ViewB.resources
 D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.SellACars.Notice.View.ViewN.resources
 D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.SellACars.WindowMain.View.ViewS.resources
+D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.Observed.MainWindow.View.ViewO.resources
+D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.Observed.Notice.View.ViewN.resources
