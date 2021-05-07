@@ -1,8 +1,5 @@
-﻿using NoticeMyCar.Login.Model;
-using NoticeMyCar.Menu;
-using NoticeMyCar.Menu.View;
+﻿using NoticeMyCar.Menu.View;
 using NoticeMyCar.Registration.View;
-using NoticeMyCar.Services.Login;
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;

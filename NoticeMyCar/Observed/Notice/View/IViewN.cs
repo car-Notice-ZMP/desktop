@@ -20,5 +20,6 @@ namespace NoticeMyCar.Observed.Notice.View
 
         event EventHandler giveTheNumberOfNotices;
         event EventHandler noticeAndId;
+        event EventHandler removeFromWatched;
     }
 }

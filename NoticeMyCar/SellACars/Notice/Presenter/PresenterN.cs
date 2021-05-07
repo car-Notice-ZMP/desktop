@@ -1,10 +1,6 @@
 ﻿using NoticeMyCar.SellACars.Notice.Service;
 using NoticeMyCar.SellACars.Notice.View;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NoticeMyCar.SellACars.Notice.Presenter
 {

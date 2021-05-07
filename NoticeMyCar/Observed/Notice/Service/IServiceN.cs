@@ -6,5 +6,6 @@ namespace NoticeMyCar.Observed.Notice.Service
     {
         IModelN Notice(int id);
         int NumberOfNotices();
+        void removeFromWatched(int id);
     }
 }

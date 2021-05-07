@@ -330,15 +330,15 @@ namespace NoticeMyCar.BuyACar.Notice.View
             // 
             this.iconButtonAddinToWatched.BackColor = System.Drawing.Color.Transparent;
             this.iconButtonAddinToWatched.FlatAppearance.BorderSize = 0;
-            this.iconButtonAddinToWatched.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.iconButtonAddinToWatched.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.iconButtonAddinToWatched.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButtonAddinToWatched.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.iconButtonAddinToWatched.IconColor = System.Drawing.Color.LightGray;
             this.iconButtonAddinToWatched.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonAddinToWatched.IconSize = 20;
-            this.iconButtonAddinToWatched.Location = new System.Drawing.Point(568, 5);
+            this.iconButtonAddinToWatched.Location = new System.Drawing.Point(575, 0);
             this.iconButtonAddinToWatched.Name = "iconButtonAddinToWatched";
-            this.iconButtonAddinToWatched.Size = new System.Drawing.Size(20, 20);
+            this.iconButtonAddinToWatched.Size = new System.Drawing.Size(25, 25);
             this.iconButtonAddinToWatched.TabIndex = 45;
             this.iconButtonAddinToWatched.UseVisualStyleBackColor = false;
             this.iconButtonAddinToWatched.Click += new System.EventHandler(this.iconButtonAddinToWatched_Click);

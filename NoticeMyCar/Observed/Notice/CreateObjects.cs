@@ -2,11 +2,6 @@
 using NoticeMyCar.Observed.Notice.Presenter;
 using NoticeMyCar.Observed.Notice.Service;
 using NoticeMyCar.Observed.Notice.View;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NoticeMyCar.Observed.Notice
 {

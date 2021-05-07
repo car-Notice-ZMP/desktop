@@ -2,11 +2,6 @@
 using NoticeMyCar.BuyACar.Notice.Presenter;
 using NoticeMyCar.BuyACar.Notice.Service;
 using NoticeMyCar.BuyACar.Notice.View;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NoticeMyCar.BuyACar.Notice
 {

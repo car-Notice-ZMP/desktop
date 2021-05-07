@@ -110,7 +110,7 @@ namespace NoticeMyCar.SellACars.Notice.View
             // 
             this.iconButtonEdit.BackColor = System.Drawing.Color.Transparent;
             this.iconButtonEdit.FlatAppearance.BorderSize = 0;
-            this.iconButtonEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
+            this.iconButtonEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.iconButtonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButtonEdit.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.iconButtonEdit.IconColor = System.Drawing.Color.LightGray;

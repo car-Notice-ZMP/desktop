@@ -1,15 +1,6 @@
 ﻿using NoticeMyCar.SellACars.AddNotice.Model;
 using NoticeMyCar.SellACars.AddNotice.View;
 using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NoticeMyCar.SellACars.AddNotice.Service
 {

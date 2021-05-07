@@ -2,11 +2,6 @@
 using NoticeMyCar.Login.Presenter;
 using NoticeMyCar.Login.View;
 using NoticeMyCar.Services.Login;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NoticeMyCar.Login
 {

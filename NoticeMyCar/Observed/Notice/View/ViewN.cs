@@ -1,13 +1,7 @@
 ﻿using NoticeMyCar.Observed.Notice.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NoticeMyCar.Observed.Notice.View
@@ -16,6 +10,7 @@ namespace NoticeMyCar.Observed.Notice.View
     {
         public event EventHandler giveTheNumberOfNotices;
         public event EventHandler noticeAndId;
+        public event EventHandler removeFromWatched;
 
         int numberOfUserNotices;
         int index = 0;
@@ -88,5 +83,11 @@ namespace NoticeMyCar.Observed.Notice.View
             return this;
         }
 
+        private void iconButtonRemoveToWatched_Click(object sender, EventArgs e)
+        {
+            index = id;
+            removeFromWatched(this, EventArgs.Empty);
+            Close();
+        }
     }
 }

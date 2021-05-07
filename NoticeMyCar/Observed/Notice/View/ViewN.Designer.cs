@@ -50,7 +50,7 @@ namespace NoticeMyCar.Observed.Notice.View
             this.labelYear = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.labelContent = new System.Windows.Forms.Label();
-            this.iconButtonAddinToWatched = new FontAwesome.Sharp.IconButton();
+            this.iconButtonRemoveToWatched = new FontAwesome.Sharp.IconButton();
             this.panelDataAuthor = new System.Windows.Forms.Panel();
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
@@ -290,21 +290,22 @@ namespace NoticeMyCar.Observed.Notice.View
             this.labelContent.TabIndex = 60;
             this.labelContent.Text = "X";
             // 
-            // iconButtonAddinToWatched
+            // iconButtonRemoveToWatched
             // 
-            this.iconButtonAddinToWatched.BackColor = System.Drawing.Color.Transparent;
-            this.iconButtonAddinToWatched.FlatAppearance.BorderSize = 0;
-            this.iconButtonAddinToWatched.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.iconButtonAddinToWatched.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonAddinToWatched.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.iconButtonAddinToWatched.IconColor = System.Drawing.Color.LightGray;
-            this.iconButtonAddinToWatched.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonAddinToWatched.IconSize = 20;
-            this.iconButtonAddinToWatched.Location = new System.Drawing.Point(568, 5);
-            this.iconButtonAddinToWatched.Name = "iconButtonAddinToWatched";
-            this.iconButtonAddinToWatched.Size = new System.Drawing.Size(20, 20);
-            this.iconButtonAddinToWatched.TabIndex = 61;
-            this.iconButtonAddinToWatched.UseVisualStyleBackColor = false;
+            this.iconButtonRemoveToWatched.BackColor = System.Drawing.Color.Transparent;
+            this.iconButtonRemoveToWatched.FlatAppearance.BorderSize = 0;
+            this.iconButtonRemoveToWatched.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.iconButtonRemoveToWatched.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonRemoveToWatched.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.iconButtonRemoveToWatched.IconColor = System.Drawing.Color.LightGray;
+            this.iconButtonRemoveToWatched.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonRemoveToWatched.IconSize = 20;
+            this.iconButtonRemoveToWatched.Location = new System.Drawing.Point(575, 0);
+            this.iconButtonRemoveToWatched.Name = "iconButtonRemoveToWatched";
+            this.iconButtonRemoveToWatched.Size = new System.Drawing.Size(25, 25);
+            this.iconButtonRemoveToWatched.TabIndex = 61;
+            this.iconButtonRemoveToWatched.UseVisualStyleBackColor = false;
+            this.iconButtonRemoveToWatched.Click += new System.EventHandler(this.iconButtonRemoveToWatched_Click);
             // 
             // panelDataAuthor
             // 
@@ -346,7 +347,7 @@ namespace NoticeMyCar.Observed.Notice.View
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(600, 400);
             this.Controls.Add(this.panelDataAuthor);
-            this.Controls.Add(this.iconButtonAddinToWatched);
+            this.Controls.Add(this.iconButtonRemoveToWatched);
             this.Controls.Add(this.labelContent);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.labelYear);
@@ -406,7 +407,7 @@ namespace NoticeMyCar.Observed.Notice.View
         private System.Windows.Forms.Label labelYear;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelContent;
-        private FontAwesome.Sharp.IconButton iconButtonAddinToWatched;
+        private FontAwesome.Sharp.IconButton iconButtonRemoveToWatched;
         private System.Windows.Forms.Panel panelDataAuthor;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelName;

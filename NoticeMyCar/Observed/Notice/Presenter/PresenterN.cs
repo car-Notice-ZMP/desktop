@@ -1,10 +1,6 @@
 ﻿using NoticeMyCar.Observed.Notice.Service;
 using NoticeMyCar.Observed.Notice.View;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NoticeMyCar.Observed.Notice.Presenter
 {
@@ -24,6 +20,7 @@ namespace NoticeMyCar.Observed.Notice.Presenter
 
             _view.noticeAndId += new EventHandler(giveMeTheData);
             _view.giveTheNumberOfNotices += new EventHandler(giveTheNumberOfNotices);
+            _view.removeFromWatched += new EventHandler(removeTheNoticeFromTheWatchlist);
         }
 
         void giveTheNumberOfNotices(object sender, EventArgs e)
@@ -37,6 +34,11 @@ namespace NoticeMyCar.Observed.Notice.Presenter
                 _service.Notice(
                     _view.id)
                 );
+        }
+
+        void removeTheNoticeFromTheWatchlist(object sender, EventArgs e)
+        {
+            _service.removeFromWatched(_view.id);
         }
     }
 }

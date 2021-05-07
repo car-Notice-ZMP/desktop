@@ -1,10 +1,6 @@
 ﻿using NoticeMyCar.Account.Service;
 using NoticeMyCar.Account.View;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NoticeMyCar.Account.Presenter
 {

@@ -2,10 +2,6 @@
 using NoticeMyCar.Observed.Notice.Model;
 using RestSharp;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NoticeMyCar.Observed.Notice.Service
 {
@@ -134,6 +130,15 @@ namespace NoticeMyCar.Observed.Notice.Service
             }
 
             return _model;
+        }
+
+        public void removeFromWatched(int id)
+        {
+            var client = new RestClient("https://citygame.ga/api/fav/" + id.ToString() + "/unf");
+            client.Timeout = -1;
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Authorization", "Bearer " + Token.returnToken());
+            client.Execute(request);
         }
     }
 }

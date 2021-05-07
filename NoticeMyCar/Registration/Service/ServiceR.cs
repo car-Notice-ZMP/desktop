@@ -1,13 +1,8 @@
-﻿using Newtonsoft.Json;
-using NoticeMyCar.Registration.Model;
+﻿using NoticeMyCar.Registration.Model;
 using NoticeMyCar.Registration.View;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NoticeMyCar.Registration.Service
 {
