@@ -14,16 +14,19 @@ namespace NoticeMyCar.BuyACar.Notice.Presenter
         private readonly IServiceN _service;
         private readonly IData _data;
         private readonly INumberOfNotices _numberOfNotices;
+        private readonly IWhetherAddedDoWatchlist _whetherAddedDoWatchlist;
 
-        public PresenterN(IViewN view, IServiceN service, IData data, INumberOfNotices numberOfNotices)
+        public PresenterN(IViewN view, IServiceN service, IData data, INumberOfNotices numberOfNotices, IWhetherAddedDoWatchlist whetherAddedDoWatchlist)
         {
             _view = view;
             _service = service;
             _data = data;
             _numberOfNotices = numberOfNotices;
+            _whetherAddedDoWatchlist = whetherAddedDoWatchlist;
 
             _view.noticeAndId += new EventHandler(giveMeTheData);
             _view.giveTheNumberOfNotices += new EventHandler(giveTheNumberOfNotices);
+            _view.addinToWatched += new EventHandler(addToFollowed);
         }
 
         void giveTheNumberOfNotices(object sender, EventArgs e)
@@ -33,7 +36,18 @@ namespace NoticeMyCar.BuyACar.Notice.Presenter
 
         void giveMeTheData(object sender, EventArgs e)
         {
-            _data.Data(_service.Notice(_view.id));
+            _data.Data(
+                _service.Notice(
+                    _view.id)
+                );
+        }
+
+        void addToFollowed(object sender, EventArgs e)
+        {
+            _whetherAddedDoWatchlist.Watched(
+                _service.AddToFollowed(
+                    _view.id)
+                );
         }
     }
 }

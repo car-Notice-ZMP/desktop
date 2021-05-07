@@ -53,7 +53,7 @@ namespace NoticeMyCar.BuyACar.Notice.View
             this.labelName = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
             this.panelDataAuthor = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButtonAddinToWatched = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAuthorAvatar)).BeginInit();
@@ -326,21 +326,22 @@ namespace NoticeMyCar.BuyACar.Notice.View
             this.panelDataAuthor.TabIndex = 44;
             this.panelDataAuthor.Visible = false;
             // 
-            // iconButton1
+            // iconButtonAddinToWatched
             // 
-            this.iconButton1.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.iconButton1.IconColor = System.Drawing.Color.LightGray;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 20;
-            this.iconButton1.Location = new System.Drawing.Point(568, 5);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(20, 20);
-            this.iconButton1.TabIndex = 45;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButtonAddinToWatched.BackColor = System.Drawing.Color.Transparent;
+            this.iconButtonAddinToWatched.FlatAppearance.BorderSize = 0;
+            this.iconButtonAddinToWatched.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.iconButtonAddinToWatched.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonAddinToWatched.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.iconButtonAddinToWatched.IconColor = System.Drawing.Color.LightGray;
+            this.iconButtonAddinToWatched.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonAddinToWatched.IconSize = 20;
+            this.iconButtonAddinToWatched.Location = new System.Drawing.Point(568, 5);
+            this.iconButtonAddinToWatched.Name = "iconButtonAddinToWatched";
+            this.iconButtonAddinToWatched.Size = new System.Drawing.Size(20, 20);
+            this.iconButtonAddinToWatched.TabIndex = 45;
+            this.iconButtonAddinToWatched.UseVisualStyleBackColor = false;
+            this.iconButtonAddinToWatched.Click += new System.EventHandler(this.iconButtonAddinToWatched_Click);
             // 
             // ViewN
             // 
@@ -348,7 +349,7 @@ namespace NoticeMyCar.BuyACar.Notice.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(600, 400);
-            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.iconButtonAddinToWatched);
             this.Controls.Add(this.panelDataAuthor);
             this.Controls.Add(this.pictureBoxAuthorAvatar);
             this.Controls.Add(this.iconPictureBoxStatus);
@@ -412,6 +413,6 @@ namespace NoticeMyCar.BuyACar.Notice.View
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Panel panelDataAuthor;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButtonAddinToWatched;
     }
 }

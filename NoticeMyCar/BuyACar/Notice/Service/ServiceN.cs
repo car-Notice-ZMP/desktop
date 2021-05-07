@@ -121,5 +121,23 @@ namespace NoticeMyCar.BuyACar.Notice.Service
 
             return _model;
         }
+
+        public bool AddToFollowed(int id)
+        {
+            bool whetherAddedDoWatchlist;
+
+            var client = new RestClient("https://citygame.ga/api/fav/" + id.ToString() + "/store");
+            client.Timeout = -1;
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Authorization", "Bearer " + Token.returnToken());
+            IRestResponse response = client.Execute(request);
+
+            if (response.StatusCode.ToString().Equals("OK"))
+                whetherAddedDoWatchlist = true;
+            else
+                whetherAddedDoWatchlist = false;
+
+            return whetherAddedDoWatchlist;
+        }
     }
 }

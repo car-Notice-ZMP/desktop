@@ -14,8 +14,9 @@ namespace NoticeMyCar.BuyACar.Notice.View
 {
     public partial class ViewN : Form, IViewN
     {
-        public event EventHandler noticeAndId;
         public event EventHandler giveTheNumberOfNotices;
+        public event EventHandler noticeAndId;
+        public event EventHandler addinToWatched;
 
         Panel panel = new Panel();
 
@@ -72,6 +73,15 @@ namespace NoticeMyCar.BuyACar.Notice.View
             labelContent.Text = data.message;
         }
 
+        public void Watched(bool b)
+        {
+            if (b)
+                MessageBox.Show("Dodano do obserwowanych ogłoszeń.", "Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("Nie dodano do obserwowanych ogłoszeń.", "Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+
         public int theNumberOfMyNotices()
         {
             giveTheNumberOfNotices(this, EventArgs.Empty);
@@ -102,6 +112,11 @@ namespace NoticeMyCar.BuyACar.Notice.View
         private void pictureBoxAuthorAvatar_MouseLeave(object sender, EventArgs e)
         {
             panelDataAuthor.Hide();
+        }
+
+        private void iconButtonAddinToWatched_Click(object sender, EventArgs e)
+        {
+            addinToWatched(this, EventArgs.Empty);
         }
     }
 }

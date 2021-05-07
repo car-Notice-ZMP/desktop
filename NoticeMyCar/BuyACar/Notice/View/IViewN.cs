@@ -14,11 +14,17 @@ namespace NoticeMyCar.BuyACar.Notice.View
         void NumNumberOfNotices(int numberOfNotices);
     }
 
-    public interface IViewN : IData, INumberOfNotices
+    public interface IWhetherAddedDoWatchlist
+    {
+        void Watched(bool b);
+    }
+
+    public interface IViewN : IData, INumberOfNotices, IWhetherAddedDoWatchlist
     {
         int id { get; }
 
         event EventHandler giveTheNumberOfNotices;
         event EventHandler noticeAndId;
+        event EventHandler addinToWatched;
     }
 }
