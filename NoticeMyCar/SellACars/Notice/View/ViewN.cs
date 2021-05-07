@@ -1,4 +1,4 @@
-﻿using NoticeMyCar.SellACars.Notices.Model;
+﻿using NoticeMyCar.SellACars.Notice.Model;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NoticeMyCar.SellACars.Notices.View
+namespace NoticeMyCar.SellACars.Notice.View
 {
     public partial class ViewN : Form, IViewN
     {

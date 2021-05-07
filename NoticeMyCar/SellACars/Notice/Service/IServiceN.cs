@@ -1,7 +1,7 @@
-﻿using NoticeMyCar.SellACars.Notices.Model;
+﻿using NoticeMyCar.SellACars.Notice.Model;
 using System.Collections.Generic;
 
-namespace NoticeMyCar.SellACars.Notices.Service
+namespace NoticeMyCar.SellACars.Notice.Service
 {
     interface IServiceN
     {

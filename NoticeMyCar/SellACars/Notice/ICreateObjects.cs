@@ -1,6 +1,6 @@
-﻿using NoticeMyCar.SellACars.Notices.View;
+﻿using NoticeMyCar.SellACars.Notice.View;
 
-namespace NoticeMyCar.SellACars.Notices
+namespace NoticeMyCar.SellACars.Notice
 {
     interface ICreateObjects
     {

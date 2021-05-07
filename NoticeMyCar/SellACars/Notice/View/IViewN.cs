@@ -1,9 +1,9 @@
-﻿using NoticeMyCar.SellACars.Notices.Model;
+﻿using NoticeMyCar.SellACars.Notice.Model;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace NoticeMyCar.SellACars.Notices.View
+namespace NoticeMyCar.SellACars.Notice.View
 {
     public interface IData
     {

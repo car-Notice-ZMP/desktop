@@ -1,15 +1,15 @@
 ﻿using NoticeMyCar.SellACars.AddNotice.Service;
-using NoticeMyCar.SellACars.Notices.Model;
-using NoticeMyCar.SellACars.Notices.Presenter;
-using NoticeMyCar.SellACars.Notices.Service;
-using NoticeMyCar.SellACars.Notices.View;
+using NoticeMyCar.SellACars.Notice.Model;
+using NoticeMyCar.SellACars.Notice.Presenter;
+using NoticeMyCar.SellACars.Notice.Service;
+using NoticeMyCar.SellACars.Notice.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NoticeMyCar.SellACars.Notices
+namespace NoticeMyCar.SellACars.Notice
 {
     class CreateObjects : ICreateObjects
     {

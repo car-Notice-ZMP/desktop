@@ -1,12 +1,12 @@
-﻿using NoticeMyCar.SellACars.Notices.Service;
-using NoticeMyCar.SellACars.Notices.View;
+﻿using NoticeMyCar.SellACars.Notice.Service;
+using NoticeMyCar.SellACars.Notice.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NoticeMyCar.SellACars.Notices.Presenter
+namespace NoticeMyCar.SellACars.Notice.Presenter
 {
     class PresenterN
     {

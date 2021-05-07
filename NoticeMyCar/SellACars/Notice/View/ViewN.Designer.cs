@@ -1,5 +1,5 @@
 ﻿
-namespace NoticeMyCar.SellACars.Notices.View
+namespace NoticeMyCar.SellACars.Notice.View
 {
     partial class ViewN
     {
@@ -57,7 +57,7 @@ namespace NoticeMyCar.SellACars.Notices.View
             // pictureBoxCar
             // 
             this.pictureBoxCar.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxCar.Location = new System.Drawing.Point(12, 31);
+            this.pictureBoxCar.Location = new System.Drawing.Point(17, 31);
             this.pictureBoxCar.Name = "pictureBoxCar";
             this.pictureBoxCar.Size = new System.Drawing.Size(200, 113);
             this.pictureBoxCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -82,10 +82,10 @@ namespace NoticeMyCar.SellACars.Notices.View
             // 
             this.labelContent.BackColor = System.Drawing.Color.Transparent;
             this.labelContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelContent.Location = new System.Drawing.Point(388, 160);
+            this.labelContent.Location = new System.Drawing.Point(359, 199);
             this.labelContent.Name = "labelContent";
             this.labelContent.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.labelContent.Size = new System.Drawing.Size(200, 193);
+            this.labelContent.Size = new System.Drawing.Size(210, 192);
             this.labelContent.TabIndex = 4;
             this.labelContent.Text = "X";
             // 
@@ -180,7 +180,7 @@ namespace NoticeMyCar.SellACars.Notices.View
             this.labelBody.AutoSize = true;
             this.labelBody.BackColor = System.Drawing.Color.Transparent;
             this.labelBody.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelBody.Location = new System.Drawing.Point(125, 273);
+            this.labelBody.Location = new System.Drawing.Point(125, 276);
             this.labelBody.Name = "labelBody";
             this.labelBody.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.labelBody.Size = new System.Drawing.Size(40, 29);
@@ -192,7 +192,7 @@ namespace NoticeMyCar.SellACars.Notices.View
             this.labelMileage.AutoSize = true;
             this.labelMileage.BackColor = System.Drawing.Color.Transparent;
             this.labelMileage.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelMileage.Location = new System.Drawing.Point(125, 302);
+            this.labelMileage.Location = new System.Drawing.Point(125, 305);
             this.labelMileage.Name = "labelMileage";
             this.labelMileage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.labelMileage.Size = new System.Drawing.Size(40, 29);
@@ -204,7 +204,7 @@ namespace NoticeMyCar.SellACars.Notices.View
             this.labelPrice.AutoSize = true;
             this.labelPrice.BackColor = System.Drawing.Color.Transparent;
             this.labelPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelPrice.Location = new System.Drawing.Point(125, 331);
+            this.labelPrice.Location = new System.Drawing.Point(125, 334);
             this.labelPrice.Name = "labelPrice";
             this.labelPrice.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.labelPrice.Size = new System.Drawing.Size(40, 29);
@@ -216,7 +216,7 @@ namespace NoticeMyCar.SellACars.Notices.View
             this.labelYear.AutoSize = true;
             this.labelYear.BackColor = System.Drawing.Color.Transparent;
             this.labelYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelYear.Location = new System.Drawing.Point(125, 360);
+            this.labelYear.Location = new System.Drawing.Point(125, 363);
             this.labelYear.Name = "labelYear";
             this.labelYear.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.labelYear.Size = new System.Drawing.Size(40, 29);
@@ -257,7 +257,7 @@ namespace NoticeMyCar.SellACars.Notices.View
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(68, 273);
+            this.label4.Location = new System.Drawing.Point(68, 276);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 29);
             this.label4.TabIndex = 19;
@@ -267,7 +267,7 @@ namespace NoticeMyCar.SellACars.Notices.View
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(12, 302);
+            this.label5.Location = new System.Drawing.Point(12, 305);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 29);
             this.label5.TabIndex = 20;
@@ -277,7 +277,7 @@ namespace NoticeMyCar.SellACars.Notices.View
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(52, 331);
+            this.label6.Location = new System.Drawing.Point(52, 334);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 29);
             this.label6.TabIndex = 21;
@@ -297,7 +297,7 @@ namespace NoticeMyCar.SellACars.Notices.View
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(66, 360);
+            this.label8.Location = new System.Drawing.Point(66, 363);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 29);
             this.label8.TabIndex = 23;
@@ -307,7 +307,7 @@ namespace NoticeMyCar.SellACars.Notices.View
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(388, 115);
+            this.label9.Location = new System.Drawing.Point(359, 160);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 29);
             this.label9.TabIndex = 24;
@@ -315,7 +315,7 @@ namespace NoticeMyCar.SellACars.Notices.View
             // 
             // ViewN
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(600, 400);
             this.Controls.Add(this.label9);

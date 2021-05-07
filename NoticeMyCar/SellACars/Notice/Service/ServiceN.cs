@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using NoticeMyCar.SellACars.Notices.Model;
+using NoticeMyCar.SellACars.Notice.Model;
 using RestSharp;
 using System;
 using System.Collections;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NoticeMyCar.SellACars.Notices.Service
+namespace NoticeMyCar.SellACars.Notice.Service
 {
     class ServiceN : IServiceN
     {

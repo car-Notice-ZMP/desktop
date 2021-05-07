@@ -1,17 +1,19 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NoticeMyCar.SellACars.Notices.Model
+namespace NoticeMyCar.BuyACar.Notice.Model
 {
     class ModelN : IModelN
     {
         public int id { get; set; }
         public string image_url { get; set; }
         public string title { get; set; }
+        public string notice_author { get; set; }
+        public string notice_author_email { get; set; }
+        public string author_avatar { get; set; }
         public string message { get; set; }
         public string mark { get; set; }
         public string model { get; set; }

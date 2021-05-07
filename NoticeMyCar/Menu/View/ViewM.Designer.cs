@@ -30,12 +30,13 @@ namespace NoticeMyCar.Menu.View
         private void InitializeComponent()
         {
             FontAwesome.Sharp.IconButton iconButtonAccount;
-            FontAwesome.Sharp.IconButton iconButton1;
+            FontAwesome.Sharp.IconButton iconButtonBuyACar;
             FontAwesome.Sharp.IconButton iconButtonObserved;
             FontAwesome.Sharp.IconButton iconButtonSellACar;
             FontAwesome.Sharp.IconButton iconButtonLogOut;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewM));
             this.panelTopMenu = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonMinimized = new System.Windows.Forms.Button();
             this.buttonWindow = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
@@ -44,9 +45,8 @@ namespace NoticeMyCar.Menu.View
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             iconButtonAccount = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            iconButtonBuyACar = new FontAwesome.Sharp.IconButton();
             iconButtonObserved = new FontAwesome.Sharp.IconButton();
             iconButtonSellACar = new FontAwesome.Sharp.IconButton();
             iconButtonLogOut = new FontAwesome.Sharp.IconButton();
@@ -82,28 +82,29 @@ namespace NoticeMyCar.Menu.View
             iconButtonAccount.UseVisualStyleBackColor = false;
             iconButtonAccount.Click += new System.EventHandler(this.iconButtonAccount_Click);
             // 
-            // iconButton1
+            // iconButtonBuyACar
             // 
-            iconButton1.BackColor = System.Drawing.Color.Black;
-            iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            iconButton1.ForeColor = System.Drawing.Color.LightGray;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.CarAlt;
-            iconButton1.IconColor = System.Drawing.Color.LightGray;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 30;
-            iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            iconButton1.Location = new System.Drawing.Point(0, 203);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new System.Drawing.Size(247, 50);
-            iconButton1.TabIndex = 2;
-            iconButton1.Text = "Kup samochód";
-            iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            iconButton1.UseVisualStyleBackColor = false;
+            iconButtonBuyACar.BackColor = System.Drawing.Color.Black;
+            iconButtonBuyACar.Dock = System.Windows.Forms.DockStyle.Top;
+            iconButtonBuyACar.FlatAppearance.BorderSize = 0;
+            iconButtonBuyACar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            iconButtonBuyACar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            iconButtonBuyACar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            iconButtonBuyACar.ForeColor = System.Drawing.Color.LightGray;
+            iconButtonBuyACar.IconChar = FontAwesome.Sharp.IconChar.CarAlt;
+            iconButtonBuyACar.IconColor = System.Drawing.Color.LightGray;
+            iconButtonBuyACar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonBuyACar.IconSize = 30;
+            iconButtonBuyACar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            iconButtonBuyACar.Location = new System.Drawing.Point(0, 203);
+            iconButtonBuyACar.Name = "iconButtonBuyACar";
+            iconButtonBuyACar.Size = new System.Drawing.Size(247, 50);
+            iconButtonBuyACar.TabIndex = 2;
+            iconButtonBuyACar.Text = "Kup samochód";
+            iconButtonBuyACar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            iconButtonBuyACar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            iconButtonBuyACar.UseVisualStyleBackColor = false;
+            iconButtonBuyACar.Click += new System.EventHandler(this.iconButtonBuyACar_Click);
             // 
             // iconButtonObserved
             // 
@@ -191,6 +192,17 @@ namespace NoticeMyCar.Menu.View
             this.panelTopMenu.TabIndex = 1;
             this.panelTopMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTopMenu_MouseDown);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.LightGray;
+            this.label1.Location = new System.Drawing.Point(12, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 15);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Notice My Car";
+            // 
             // buttonMinimized
             // 
             this.buttonMinimized.BackColor = System.Drawing.Color.Transparent;
@@ -248,7 +260,7 @@ namespace NoticeMyCar.Menu.View
             this.panel1.Controls.Add(iconButtonLogOut);
             this.panel1.Controls.Add(iconButtonSellACar);
             this.panel1.Controls.Add(iconButtonObserved);
-            this.panel1.Controls.Add(iconButton1);
+            this.panel1.Controls.Add(iconButtonBuyACar);
             this.panel1.Controls.Add(iconButtonAccount);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -296,17 +308,6 @@ namespace NoticeMyCar.Menu.View
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(12, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 15);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Notice My Car";
             // 
             // ViewM
             // 

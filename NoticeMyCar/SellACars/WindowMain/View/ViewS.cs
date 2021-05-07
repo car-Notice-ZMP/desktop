@@ -1,6 +1,6 @@
 ﻿using NoticeMyCar.SellACars.AddNotice.View;
-using NoticeMyCar.SellACars.Notices;
-using NoticeMyCar.SellACars.Notices.View;
+using NoticeMyCar.SellACars.Notice;
+using NoticeMyCar.SellACars.Notice.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,14 +13,14 @@ using System.Windows.Forms;
 
 namespace NoticeMyCar.SellACars.WindowMain.View
 {
-    public partial class ViewW : Form
+    public partial class ViewS : Form
     {
         List<Form> notices = new List<Form>();
         int page = 0;
-        int l = 0;
+        int newPage = 0;
         ViewN viewN = new ViewN();
 
-        public ViewW()
+        public ViewS()
         {
             InitializeComponent();
             settingUpNotices();
@@ -48,11 +48,11 @@ namespace NoticeMyCar.SellACars.WindowMain.View
 
                 if (quantityWillBeDisplayed > displayedNumberOfNotices)
                 {
-                    l++;
-                    quantityWillBeDisplayed = displayedNumberOfNotices * l;
+                    newPage++;
+                    quantityWillBeDisplayed = displayedNumberOfNotices * newPage;
                 }
                 else
-                    quantityWillBeDisplayed += displayedNumberOfNotices * l;
+                    quantityWillBeDisplayed += displayedNumberOfNotices * newPage;
 
                 for (int i = notices.Count - 1; i >= 0; i--)
                     Controls.Remove(notices[i]);
@@ -198,7 +198,7 @@ namespace NoticeMyCar.SellACars.WindowMain.View
 
         private void iconButtonAngleRight_Click(object sender, EventArgs e)
         {
-            if (viewN.theNumberOfMyNotices() != notices.Count)
+            if (viewN.theNumberOfMyNotices() != notices.Count && (page + 1) * spaceForAnnouncements() != notices.Count)
                 settingUpNotices();
             else
                 nextPage();
