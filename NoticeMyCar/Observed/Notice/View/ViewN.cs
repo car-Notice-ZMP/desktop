@@ -89,5 +89,15 @@ namespace NoticeMyCar.Observed.Notice.View
             removeFromWatched(this, EventArgs.Empty);
             Close();
         }
+
+        private void pictureBoxAuthorAvatar_MouseEnter(object sender, EventArgs e)
+        {
+            panelDataAuthor.Show();
+        }
+
+        private void pictureBoxAuthorAvatar_MouseLeave(object sender, EventArgs e)
+        {
+            panelDataAuthor.Hide();
+        }
     }
 }

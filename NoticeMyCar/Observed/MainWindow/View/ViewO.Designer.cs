@@ -42,9 +42,9 @@ namespace NoticeMyCar.Observed.MainWindow.View
             this.panelBottom.Controls.Add(this.iconButtonAngleLeft);
             this.panelBottom.Controls.Add(this.iconButtonAngleRight);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(0, 482);
+            this.panelBottom.Location = new System.Drawing.Point(0, 504);
             this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(753, 50);
+            this.panelBottom.Size = new System.Drawing.Size(837, 50);
             this.panelBottom.TabIndex = 3;
             // 
             // labelPage
@@ -52,7 +52,7 @@ namespace NoticeMyCar.Observed.MainWindow.View
             this.labelPage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelPage.AutoSize = true;
             this.labelPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelPage.Location = new System.Drawing.Point(369, 0);
+            this.labelPage.Location = new System.Drawing.Point(411, 0);
             this.labelPage.Name = "labelPage";
             this.labelPage.Size = new System.Drawing.Size(39, 42);
             this.labelPage.TabIndex = 2;
@@ -67,7 +67,7 @@ namespace NoticeMyCar.Observed.MainWindow.View
             this.iconButtonAngleLeft.IconColor = System.Drawing.Color.Black;
             this.iconButtonAngleLeft.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonAngleLeft.IconSize = 62;
-            this.iconButtonAngleLeft.Location = new System.Drawing.Point(289, 0);
+            this.iconButtonAngleLeft.Location = new System.Drawing.Point(331, 0);
             this.iconButtonAngleLeft.Name = "iconButtonAngleLeft";
             this.iconButtonAngleLeft.Size = new System.Drawing.Size(50, 50);
             this.iconButtonAngleLeft.TabIndex = 1;
@@ -84,7 +84,7 @@ namespace NoticeMyCar.Observed.MainWindow.View
             this.iconButtonAngleRight.IconColor = System.Drawing.Color.Black;
             this.iconButtonAngleRight.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonAngleRight.IconSize = 62;
-            this.iconButtonAngleRight.Location = new System.Drawing.Point(439, 0);
+            this.iconButtonAngleRight.Location = new System.Drawing.Point(481, 0);
             this.iconButtonAngleRight.Name = "iconButtonAngleRight";
             this.iconButtonAngleRight.Size = new System.Drawing.Size(50, 50);
             this.iconButtonAngleRight.TabIndex = 0;
@@ -95,7 +95,7 @@ namespace NoticeMyCar.Observed.MainWindow.View
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(753, 532);
+            this.ClientSize = new System.Drawing.Size(837, 554);
             this.Controls.Add(this.panelBottom);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

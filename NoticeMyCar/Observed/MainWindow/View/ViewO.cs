@@ -21,8 +21,8 @@ namespace NoticeMyCar.Observed.MainWindow.View
 
         private void settingUpNotices()
         {
-            int x = 50;
-            int y = 50;
+            int x = 80;
+            int y = 80;
             int quantityWillBeDisplayed = 0;
             int availableNoticeSpace = spaceForAnnouncements();
             int displayedNumberOfNotices;
@@ -63,7 +63,7 @@ namespace NoticeMyCar.Observed.MainWindow.View
 
                     else
                     {
-                        x = 50;
+                        x = 80;
                         y += 420;
                         n.Location = new Point(x, y);
                     }
@@ -83,8 +83,8 @@ namespace NoticeMyCar.Observed.MainWindow.View
 
         private int spaceForAnnouncements()
         {
-            int x = 50;
-            int y = 50;
+            int x = 80;
+            int y = 80;
             int i = 0;
 
             do
@@ -95,7 +95,7 @@ namespace NoticeMyCar.Observed.MainWindow.View
                     x += 650;
                 } while (x < Screen.PrimaryScreen.Bounds.Width - 620);
 
-                x = 50;
+                x = 80;
                 y += 420;
             } while (y < Screen.PrimaryScreen.Bounds.Height - 401);
 

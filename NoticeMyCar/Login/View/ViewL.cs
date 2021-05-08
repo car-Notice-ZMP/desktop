@@ -13,6 +13,7 @@ namespace NoticeMyCar.Login.View
         public ViewL()
         {
             InitializeComponent();
+
             CreateObjects createObjects = new CreateObjects();
             createObjects.FacityFactory(this);
         }

@@ -3,6 +3,7 @@ using NoticeMyCar.BuyACa.WindowMain.View;
 using NoticeMyCar.Login.View;
 using NoticeMyCar.Observed.MainWindow.View;
 using NoticeMyCar.SellACars.WindowMain.View;
+using NoticeMyCar.SendAMessage.View;
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -46,13 +47,6 @@ namespace NoticeMyCar.Menu.View
             SendMessage(Handle, 0x112, 0xf012, 0);
         }
 
-        private void iconButtonLogOut_Click(object sender, EventArgs e)
-        {
-            ViewL view = new ViewL();
-            view.Show();
-            Hide();
-        }
-
         private Form activeForm = null;
 
         private void changePanel(Form panel)
@@ -87,6 +81,18 @@ namespace NoticeMyCar.Menu.View
         private void iconButtonSellACar_Click(object sender, EventArgs e)
         {
             changePanel(new ViewS());
+        }
+
+        private void iconButtonSendAMessage_Click(object sender, EventArgs e)
+        {
+            changePanel(new ViewSAM());
+        }
+
+        private void iconButtonLogOut_Click(object sender, EventArgs e)
+        {
+            ViewL view = new ViewL();
+            view.Show();
+            Hide();
         }
     }
 }

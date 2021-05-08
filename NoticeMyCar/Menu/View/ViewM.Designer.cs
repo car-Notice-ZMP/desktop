@@ -33,6 +33,7 @@ namespace NoticeMyCar.Menu.View
             FontAwesome.Sharp.IconButton iconButtonBuyACar;
             FontAwesome.Sharp.IconButton iconButtonObserved;
             FontAwesome.Sharp.IconButton iconButtonSellACar;
+            FontAwesome.Sharp.IconButton iconButtonSendAMessage;
             FontAwesome.Sharp.IconButton iconButtonLogOut;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewM));
             this.panelTopMenu = new System.Windows.Forms.Panel();
@@ -49,6 +50,7 @@ namespace NoticeMyCar.Menu.View
             iconButtonBuyACar = new FontAwesome.Sharp.IconButton();
             iconButtonObserved = new FontAwesome.Sharp.IconButton();
             iconButtonSellACar = new FontAwesome.Sharp.IconButton();
+            iconButtonSendAMessage = new FontAwesome.Sharp.IconButton();
             iconButtonLogOut = new FontAwesome.Sharp.IconButton();
             this.panelTopMenu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -154,6 +156,30 @@ namespace NoticeMyCar.Menu.View
             iconButtonSellACar.UseVisualStyleBackColor = false;
             iconButtonSellACar.Click += new System.EventHandler(this.iconButtonSellACar_Click);
             // 
+            // iconButtonSendAMessage
+            // 
+            iconButtonSendAMessage.BackColor = System.Drawing.Color.Black;
+            iconButtonSendAMessage.Dock = System.Windows.Forms.DockStyle.Top;
+            iconButtonSendAMessage.FlatAppearance.BorderSize = 0;
+            iconButtonSendAMessage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            iconButtonSendAMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            iconButtonSendAMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            iconButtonSendAMessage.ForeColor = System.Drawing.Color.LightGray;
+            iconButtonSendAMessage.IconChar = FontAwesome.Sharp.IconChar.Envelope;
+            iconButtonSendAMessage.IconColor = System.Drawing.Color.LightGray;
+            iconButtonSendAMessage.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            iconButtonSendAMessage.IconSize = 30;
+            iconButtonSendAMessage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            iconButtonSendAMessage.Location = new System.Drawing.Point(0, 353);
+            iconButtonSendAMessage.Name = "iconButtonSendAMessage";
+            iconButtonSendAMessage.Size = new System.Drawing.Size(247, 50);
+            iconButtonSendAMessage.TabIndex = 5;
+            iconButtonSendAMessage.Text = "Wyślij wiadomość";
+            iconButtonSendAMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            iconButtonSendAMessage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            iconButtonSendAMessage.UseVisualStyleBackColor = false;
+            iconButtonSendAMessage.Click += new System.EventHandler(this.iconButtonSendAMessage_Click);
+            // 
             // iconButtonLogOut
             // 
             iconButtonLogOut.BackColor = System.Drawing.Color.Black;
@@ -168,10 +194,10 @@ namespace NoticeMyCar.Menu.View
             iconButtonLogOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButtonLogOut.IconSize = 30;
             iconButtonLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            iconButtonLogOut.Location = new System.Drawing.Point(0, 353);
+            iconButtonLogOut.Location = new System.Drawing.Point(0, 403);
             iconButtonLogOut.Name = "iconButtonLogOut";
             iconButtonLogOut.Size = new System.Drawing.Size(247, 50);
-            iconButtonLogOut.TabIndex = 5;
+            iconButtonLogOut.TabIndex = 6;
             iconButtonLogOut.Text = "Wyloguj się";
             iconButtonLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             iconButtonLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -188,7 +214,7 @@ namespace NoticeMyCar.Menu.View
             this.panelTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTopMenu.Location = new System.Drawing.Point(0, 0);
             this.panelTopMenu.Name = "panelTopMenu";
-            this.panelTopMenu.Size = new System.Drawing.Size(1000, 30);
+            this.panelTopMenu.Size = new System.Drawing.Size(1084, 30);
             this.panelTopMenu.TabIndex = 1;
             this.panelTopMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTopMenu_MouseDown);
             // 
@@ -212,7 +238,7 @@ namespace NoticeMyCar.Menu.View
             this.buttonMinimized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMinimized.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonMinimized.ForeColor = System.Drawing.Color.LightGray;
-            this.buttonMinimized.Location = new System.Drawing.Point(910, 0);
+            this.buttonMinimized.Location = new System.Drawing.Point(994, 0);
             this.buttonMinimized.Name = "buttonMinimized";
             this.buttonMinimized.Size = new System.Drawing.Size(30, 30);
             this.buttonMinimized.TabIndex = 29;
@@ -229,7 +255,7 @@ namespace NoticeMyCar.Menu.View
             this.buttonWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonWindow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonWindow.ForeColor = System.Drawing.Color.LightGray;
-            this.buttonWindow.Location = new System.Drawing.Point(940, 0);
+            this.buttonWindow.Location = new System.Drawing.Point(1024, 0);
             this.buttonWindow.Name = "buttonWindow";
             this.buttonWindow.Size = new System.Drawing.Size(30, 30);
             this.buttonWindow.TabIndex = 28;
@@ -246,7 +272,7 @@ namespace NoticeMyCar.Menu.View
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonClose.ForeColor = System.Drawing.Color.LightGray;
-            this.buttonClose.Location = new System.Drawing.Point(970, 0);
+            this.buttonClose.Location = new System.Drawing.Point(1054, 0);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(30, 30);
             this.buttonClose.TabIndex = 22;
@@ -258,6 +284,7 @@ namespace NoticeMyCar.Menu.View
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Controls.Add(iconButtonLogOut);
+            this.panel1.Controls.Add(iconButtonSendAMessage);
             this.panel1.Controls.Add(iconButtonSellACar);
             this.panel1.Controls.Add(iconButtonObserved);
             this.panel1.Controls.Add(iconButtonBuyACar);
@@ -266,7 +293,7 @@ namespace NoticeMyCar.Menu.View
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(247, 532);
+            this.panel1.Size = new System.Drawing.Size(247, 554);
             this.panel1.TabIndex = 2;
             // 
             // panel2
@@ -295,14 +322,14 @@ namespace NoticeMyCar.Menu.View
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(247, 30);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(753, 532);
+            this.panelMain.Size = new System.Drawing.Size(837, 554);
             this.panelMain.TabIndex = 3;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(160, 91);
+            this.pictureBox2.Location = new System.Drawing.Point(202, 102);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(432, 342);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -314,13 +341,13 @@ namespace NoticeMyCar.Menu.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(1000, 562);
+            this.ClientSize = new System.Drawing.Size(1084, 584);
             this.ControlBox = false;
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelTopMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.MinimumSize = new System.Drawing.Size(1016, 578);
+            this.MinimumSize = new System.Drawing.Size(1100, 600);
             this.Name = "ViewM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -67,9 +67,9 @@ namespace NoticeMyCar.BuyACar.Notice.View
             labelContent.Text = data.message;
         }
 
-        public void Watched(bool b)
+        public void Watched(bool hasBeenAddedToWatchlist)
         {
-            if (b)
+            if (hasBeenAddedToWatchlist)
                 MessageBox.Show("Dodano do obserwowanych ogłoszeń.", "Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("Nie dodano do obserwowanych ogłoszeń.", "Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Warning);

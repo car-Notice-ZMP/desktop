@@ -92,6 +92,8 @@ namespace NoticeMyCar.Observed.Notice.View
             this.pictureBoxAuthorAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxAuthorAvatar.TabIndex = 42;
             this.pictureBoxAuthorAvatar.TabStop = false;
+            this.pictureBoxAuthorAvatar.MouseEnter += new System.EventHandler(this.pictureBoxAuthorAvatar_MouseEnter);
+            this.pictureBoxAuthorAvatar.MouseLeave += new System.EventHandler(this.pictureBoxAuthorAvatar_MouseLeave);
             // 
             // label1
             // 
