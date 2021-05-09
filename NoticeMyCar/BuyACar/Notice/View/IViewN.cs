@@ -1,6 +1,5 @@
 ﻿using NoticeMyCar.BuyACar.Notice.Model;
 using System;
-using System.Windows.Forms;
 
 namespace NoticeMyCar.BuyACar.Notice.View
 {
@@ -22,9 +21,12 @@ namespace NoticeMyCar.BuyACar.Notice.View
     public interface IViewN : IData, INumberOfNotices, IWhetherAddedDoWatchlist
     {
         int id { get; }
+        string search { get; }
 
         event EventHandler giveTheNumberOfNotices;
         event EventHandler noticeAndId;
         event EventHandler addinToWatched;
+        event EventHandler searchedd;
+        event EventHandler giveTheNumberOfFoundNotices;
     }
 }

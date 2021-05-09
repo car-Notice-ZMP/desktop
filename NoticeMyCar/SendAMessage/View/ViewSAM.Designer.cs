@@ -31,6 +31,7 @@ namespace NoticeMyCar.SendAMessage.View
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewSAM));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconPictureBoxWasItSent = new FontAwesome.Sharp.IconPictureBox();
             this.richTextBoxContent = new System.Windows.Forms.RichTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,10 +41,9 @@ namespace NoticeMyCar.SendAMessage.View
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxReceiver = new System.Windows.Forms.TextBox();
             this.buttonSend = new System.Windows.Forms.Button();
-            this.iconPictureBoxWasItSent = new FontAwesome.Sharp.IconPictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWasItSent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -64,6 +64,22 @@ namespace NoticeMyCar.SendAMessage.View
             this.panel1.Padding = new System.Windows.Forms.Padding(50);
             this.panel1.Size = new System.Drawing.Size(506, 470);
             this.panel1.TabIndex = 0;
+            // 
+            // iconPictureBoxWasItSent
+            // 
+            this.iconPictureBoxWasItSent.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBoxWasItSent.ForeColor = System.Drawing.Color.LimeGreen;
+            this.iconPictureBoxWasItSent.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            this.iconPictureBoxWasItSent.IconColor = System.Drawing.Color.LimeGreen;
+            this.iconPictureBoxWasItSent.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBoxWasItSent.IconSize = 75;
+            this.iconPictureBoxWasItSent.Location = new System.Drawing.Point(380, 20);
+            this.iconPictureBoxWasItSent.Margin = new System.Windows.Forms.Padding(1);
+            this.iconPictureBoxWasItSent.Name = "iconPictureBoxWasItSent";
+            this.iconPictureBoxWasItSent.Size = new System.Drawing.Size(75, 75);
+            this.iconPictureBoxWasItSent.TabIndex = 29;
+            this.iconPictureBoxWasItSent.TabStop = false;
+            this.iconPictureBoxWasItSent.Visible = false;
             // 
             // richTextBoxContent
             // 
@@ -157,22 +173,6 @@ namespace NoticeMyCar.SendAMessage.View
             this.buttonSend.UseVisualStyleBackColor = false;
             this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
             // 
-            // iconPictureBoxWasItSent
-            // 
-            this.iconPictureBoxWasItSent.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBoxWasItSent.ForeColor = System.Drawing.Color.LimeGreen;
-            this.iconPictureBoxWasItSent.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            this.iconPictureBoxWasItSent.IconColor = System.Drawing.Color.LimeGreen;
-            this.iconPictureBoxWasItSent.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBoxWasItSent.IconSize = 75;
-            this.iconPictureBoxWasItSent.Location = new System.Drawing.Point(380, 20);
-            this.iconPictureBoxWasItSent.Margin = new System.Windows.Forms.Padding(1);
-            this.iconPictureBoxWasItSent.Name = "iconPictureBoxWasItSent";
-            this.iconPictureBoxWasItSent.Size = new System.Drawing.Size(75, 75);
-            this.iconPictureBoxWasItSent.TabIndex = 29;
-            this.iconPictureBoxWasItSent.TabStop = false;
-            this.iconPictureBoxWasItSent.Visible = false;
-            // 
             // ViewSAM
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -189,8 +189,8 @@ namespace NoticeMyCar.SendAMessage.View
             this.Resize += new System.EventHandler(this.ViewSAM_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWasItSent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

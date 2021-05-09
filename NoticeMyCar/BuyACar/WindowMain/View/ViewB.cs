@@ -16,6 +16,7 @@ namespace NoticeMyCar.BuyACa.WindowMain.View
         List<Form> notices = new List<Form>();
         int page = 0;
         int newPage = 0;
+        string search;
         ViewN viewN = new ViewN();
 
         public ViewB()
@@ -33,7 +34,7 @@ namespace NoticeMyCar.BuyACa.WindowMain.View
             int displayedNumberOfNotices;
             int availableNotices;
 
-            availableNotices = viewN.theNumberOfNotices();
+            availableNotices = viewN.theNumberOfNotices(search);
 
             if (availableNoticeSpace > availableNotices)
                 displayedNumberOfNotices = availableNotices;
@@ -61,7 +62,7 @@ namespace NoticeMyCar.BuyACa.WindowMain.View
                 for (int i = notices.Count; i < displayedNumberOfNotices + quantityWillBeDisplayed; i++)
                 {
                     ViewN view = new ViewN();
-                    var n = view.Notices(i);
+                    var n = view.Notices(i, search);
 
                     if (x < Screen.PrimaryScreen.Bounds.Width - 620)
                         n.Location = new Point(x, y);
@@ -76,6 +77,7 @@ namespace NoticeMyCar.BuyACa.WindowMain.View
                     x += 650;
 
                     n.TopLevel = false;
+                    n.Name = "Notice";
                     notices.Add(n);
                     Controls.Add(notices[i]);
                     notices[i].Show();
@@ -143,7 +145,6 @@ namespace NoticeMyCar.BuyACa.WindowMain.View
         {
             int spaceForAnnouncement = spaceForAnnouncements();
             int a = page * spaceForAnnouncement;
-            int b = notices.Count % spaceForAnnouncement;
 
             if (a + spaceForAnnouncement < notices.Count)
             {
@@ -173,7 +174,7 @@ namespace NoticeMyCar.BuyACa.WindowMain.View
 
         private void iconButtonAngleRight_Click(object sender, EventArgs e)
         {
-            if (viewN.theNumberOfNotices() != notices.Count && (page + 1) * spaceForAnnouncements() != notices.Count)
+            if (viewN.theNumberOfNotices(search) != notices.Count && (page + 1) * spaceForAnnouncements() != notices.Count)
                 settingUpNotices();
             else
                 nextPage();
@@ -183,6 +184,24 @@ namespace NoticeMyCar.BuyACa.WindowMain.View
         {
             if (page != 1)
                 comeBack();
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            notices.Clear();
+
+            page = 0;
+            labelPage.Text = page.ToString();
+            newPage = 0;
+
+            search = textBoxSearched.Text;
+
+            Control[] form = Controls.Find("Notice", false);
+
+            foreach (var f in form)
+                Controls.Remove(f);
+
+            settingUpNotices();
         }
     }
 }

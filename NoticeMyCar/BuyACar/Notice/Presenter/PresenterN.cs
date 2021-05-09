@@ -23,6 +23,8 @@ namespace NoticeMyCar.BuyACar.Notice.Presenter
             _view.noticeAndId += new EventHandler(giveMeTheData);
             _view.giveTheNumberOfNotices += new EventHandler(giveTheNumberOfNotices);
             _view.addinToWatched += new EventHandler(addToFollowed);
+            _view.giveTheNumberOfFoundNotices += new EventHandler(giveTheNumberOfFoundNotices);
+            _view.searchedd += new EventHandler(giveFoundNotices);
         }
 
         void giveTheNumberOfNotices(object sender, EventArgs e)
@@ -44,6 +46,23 @@ namespace NoticeMyCar.BuyACar.Notice.Presenter
                 _whetherAddedDoWatchlist.Watched(true);
             else
                 _whetherAddedDoWatchlist.Watched(false);
+        }
+
+        void giveTheNumberOfFoundNotices(object sender, EventArgs e)
+        {
+            _numberOfNotices.NumNumberOfNotices(
+                _service.NumberOfNotices(
+                    _view.search)
+                );
+        }
+
+        void giveFoundNotices(object sender, EventArgs e)
+        {
+            _data.Data(
+                _service.Notice(
+                    _view.id,
+                    _view.search)
+                );
         }
     }
 }

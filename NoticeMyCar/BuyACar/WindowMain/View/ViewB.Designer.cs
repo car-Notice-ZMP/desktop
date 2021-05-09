@@ -113,6 +113,7 @@ namespace NoticeMyCar.BuyACa.WindowMain.View
             this.buttonSearch.TabIndex = 25;
             this.buttonSearch.Text = "Szukaj";
             this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // ViewB
             // 

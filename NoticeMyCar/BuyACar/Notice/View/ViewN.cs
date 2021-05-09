@@ -11,27 +11,41 @@ namespace NoticeMyCar.BuyACar.Notice.View
         public event EventHandler giveTheNumberOfNotices;
         public event EventHandler noticeAndId;
         public event EventHandler addinToWatched;
+        public event EventHandler searchedd;
+        public event EventHandler giveTheNumberOfFoundNotices;
 
         Panel panel = new Panel();
 
         int numberOfUserNotices;
         int index = 0;
 
+        string searched;
+
         public ViewN()
         {
             InitializeComponent();
 
-            panel.Location = new Point(418, 12);
-            panel.Size = new Size(100, 25);
-            panel.BackColor = ColorTranslator.FromHtml("#808080");
+            userDataPanel();
 
             CreateObjects createObjects = new CreateObjects();
             createObjects.FacityFactory(this);
         }
 
+        private void userDataPanel()
+        {
+            panel.Location = new Point(418, 12);
+            panel.Size = new Size(100, 25);
+            panel.BackColor = ColorTranslator.FromHtml("#808080");
+        }
+
         public int id
         {
             get { return index; }
+        }
+
+        public string search
+        {
+            get { return searched; }
         }
 
         public void NumNumberOfNotices(int numberOfNotices)
@@ -43,7 +57,9 @@ namespace NoticeMyCar.BuyACar.Notice.View
         {
             index = data.id;
 
-            if (data.name.Equals("aktywne"))
+            if (data.name == null)
+                Controls.Remove(iconPictureBoxStatus);
+            else if (data.name.Equals("aktywne"))
                 iconPictureBoxStatus.IconColor = Color.LimeGreen;
             else
                 iconPictureBoxStatus.IconColor = Color.Red;
@@ -76,16 +92,31 @@ namespace NoticeMyCar.BuyACar.Notice.View
         }
 
 
-        public int theNumberOfNotices()
+        public int theNumberOfNotices(string areYouLookingFor)
         {
-            giveTheNumberOfNotices(this, EventArgs.Empty);
+            if (areYouLookingFor != null)
+            {
+                searched = areYouLookingFor;
+                giveTheNumberOfFoundNotices(this, EventArgs.Empty);
+            }
+            else
+                giveTheNumberOfNotices(this, EventArgs.Empty);
+
             return numberOfUserNotices;
         }
 
-        public Form Notices(int id)
+        public Form Notices(int id, string areYouLookingFor)
         {
             index = id;
-            noticeAndId(this, EventArgs.Empty);
+
+            if (areYouLookingFor != null)
+            {
+                searched = areYouLookingFor;
+                searchedd(this, EventArgs.Empty);
+            }
+            else
+                noticeAndId(this, EventArgs.Empty);
+
             return this;
         }
 

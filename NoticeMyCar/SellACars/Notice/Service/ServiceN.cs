@@ -57,7 +57,7 @@ namespace NoticeMyCar.SellACars.Notice.Service
 
                 if (r.Equals("title") && index == id)
                 {
-                    _model.id = Int32.Parse(
+                    _model.id = int.Parse(
                         result[i - 1]
                         .Remove(0, 1)
                         .Replace(",", "")
