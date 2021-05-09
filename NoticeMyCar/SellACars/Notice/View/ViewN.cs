@@ -161,7 +161,7 @@ namespace NoticeMyCar.SellACars.Notice.View
         {
             RichTextBox richTextBox = new RichTextBox();
             richTextBox.Location = label.Location;
-            richTextBox.Size = new Size(200, 193);
+            richTextBox.Size = new Size(210, 192);
 
             string fontName = richTextBox.Font.Name;
 
@@ -176,7 +176,7 @@ namespace NoticeMyCar.SellACars.Notice.View
         private void createButton()
         {
             Button buttonEdit = new Button();
-            buttonEdit.Location = new Point(472, 360);
+            buttonEdit.Location = new Point(472, 160);
             buttonEdit.Size = new Size(100, 30);
             buttonEdit.BackColor = ColorTranslator.FromHtml("#404040");
 

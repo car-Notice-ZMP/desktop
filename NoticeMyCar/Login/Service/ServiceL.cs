@@ -46,7 +46,7 @@ namespace NoticeMyCar.Services.Login
 
             Token.addToken(token);
 
-            if (response.StatusCode.ToString().Equals("OK"))
+            if (response.IsSuccessful)
                 validLogin = true;
             else
                 validLogin = false;

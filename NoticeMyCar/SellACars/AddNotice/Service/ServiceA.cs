@@ -49,7 +49,7 @@ namespace NoticeMyCar.SellACars.AddNotice.Service
 
             IRestResponse response = client.Execute(request);
 
-            if (response.StatusCode.ToString().Equals("OK"))
+            if (response.IsSuccessful)
                 validLogin = true;
             else
                 validLogin = false;

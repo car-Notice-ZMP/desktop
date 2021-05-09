@@ -132,7 +132,7 @@ namespace NoticeMyCar.SellACars.Notice.Service
             request.AddHeader("Authorization", "Bearer " + Token.returnToken());
             IRestResponse response = client.Execute(request);
 
-            if (response.StatusCode.ToString().Equals("OK"))
+            if (response.IsSuccessful)
                 status = true;
             else
                 status = false;
@@ -221,7 +221,7 @@ namespace NoticeMyCar.SellACars.Notice.Service
             request.AddHeader("Authorization", "Bearer " + Token.returnToken());
             IRestResponse response = client.Execute(request);
 
-            if (response.StatusCode.ToString().Equals("OK"))
+            if (response.IsSuccessful)
                 whetherItWasSuccessful = true;
             else
                 whetherItWasSuccessful = false;

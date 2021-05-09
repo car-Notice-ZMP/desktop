@@ -16,7 +16,7 @@ namespace NoticeMyCar.SendAMessage.Service
 
         public bool WasItSent(IViewSAM view)
         {
-            bool wasItSent = false;
+            bool wasItSent;
 
             _model.receiver = view.receiver;
             _model.title = view.title;
@@ -33,7 +33,7 @@ namespace NoticeMyCar.SendAMessage.Service
             request.AddHeader("Authorization", "Bearer " + Token.returnToken());
             IRestResponse response = client.Execute(request);
 
-            if (response.StatusCode.ToString().Equals("OK"))
+            if (response.IsSuccessful)
                 wasItSent = true;
             else
                 wasItSent = false;

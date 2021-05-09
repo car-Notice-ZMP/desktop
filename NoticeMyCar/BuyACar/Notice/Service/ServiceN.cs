@@ -125,7 +125,7 @@ namespace NoticeMyCar.BuyACar.Notice.Service
             request.AddHeader("Authorization", "Bearer " + Token.returnToken());
             IRestResponse response = client.Execute(request);
 
-            if (response.StatusCode.ToString().Equals("OK"))
+            if (response.IsSuccessful)
                 whetherAddedDoWatchlist = true;
             else
                 whetherAddedDoWatchlist = false;
