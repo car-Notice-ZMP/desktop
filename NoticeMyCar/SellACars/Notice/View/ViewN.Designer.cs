@@ -51,6 +51,7 @@ namespace NoticeMyCar.SellACars.Notice.View
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.iconButtonComments = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -313,11 +314,29 @@ namespace NoticeMyCar.SellACars.Notice.View
             this.label9.TabIndex = 24;
             this.label9.Text = "Opis:";
             // 
+            // iconButtonComments
+            // 
+            this.iconButtonComments.BackColor = System.Drawing.Color.Transparent;
+            this.iconButtonComments.FlatAppearance.BorderSize = 0;
+            this.iconButtonComments.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.iconButtonComments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonComments.IconChar = FontAwesome.Sharp.IconChar.Comment;
+            this.iconButtonComments.IconColor = System.Drawing.Color.LightGray;
+            this.iconButtonComments.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.iconButtonComments.IconSize = 22;
+            this.iconButtonComments.Location = new System.Drawing.Point(459, 0);
+            this.iconButtonComments.Name = "iconButtonComments";
+            this.iconButtonComments.Size = new System.Drawing.Size(48, 30);
+            this.iconButtonComments.TabIndex = 47;
+            this.iconButtonComments.UseVisualStyleBackColor = false;
+            this.iconButtonComments.Click += new System.EventHandler(this.iconButtonComments_Click);
+            // 
             // ViewN
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(600, 400);
+            this.Controls.Add(this.iconButtonComments);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -374,5 +393,6 @@ namespace NoticeMyCar.SellACars.Notice.View
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private FontAwesome.Sharp.IconButton iconButtonComments;
     }
 }

@@ -1,4 +1,5 @@
-﻿using NoticeMyCar.SellACars.AddNotice.View;
+﻿using NoticeMyCar.CommonNoticeDetail.View;
+using NoticeMyCar.SellACars.AddNotice.View;
 using NoticeMyCar.SellACars.Notice.View;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ namespace NoticeMyCar.SellACars.WindowMain.View
 {
     public partial class ViewS : Form
     {
-        List<Form> notices = new List<Form>();
+        List<ViewN> notices = new List<ViewN>();
         int page = 0;
         int newPage = 0;
         ViewN viewN = new ViewN();
@@ -72,11 +73,12 @@ namespace NoticeMyCar.SellACars.WindowMain.View
                     x += 650;
 
                     n.TopLevel = false;
-                    notices.Add(n);
+                    notices.Add((ViewN)n);
                     Controls.Add(notices[i]);
                     notices[i].Show();
                 }
 
+                listening(notices);
                 page++;
                 labelPage.Text = page.ToString();
             }
@@ -202,6 +204,20 @@ namespace NoticeMyCar.SellACars.WindowMain.View
         {
             if (page != 1)
                 comeBack();
+        }
+
+        void listening(List<ViewN> viewNs)
+        {
+            foreach (var v in viewNs)
+                v.showComments += (sender, EventArgs) => { givesTheId(sender, EventArgs, v.id); };
+        }
+
+        void givesTheId(object sender, EventArgs e, int id)
+        {
+            panelBottom.Hide();
+
+            ViewC view = new ViewC(id);
+            changePanel(view);
         }
     }
 }

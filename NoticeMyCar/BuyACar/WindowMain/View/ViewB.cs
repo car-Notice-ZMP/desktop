@@ -1,19 +1,15 @@
 ﻿using NoticeMyCar.BuyACar.Notice.View;
+using NoticeMyCar.CommonNoticeDetail.View;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NoticeMyCar.BuyACa.WindowMain.View
+namespace NoticeMyCar.BuyACar.WindowMain.View
 {
     public partial class ViewB : Form
     {
-        List<Form> notices = new List<Form>();
+        List<ViewN> notices = new List<ViewN>();
         int page = 0;
         int newPage = 0;
         string search;
@@ -78,11 +74,12 @@ namespace NoticeMyCar.BuyACa.WindowMain.View
 
                     n.TopLevel = false;
                     n.Name = "Notice";
-                    notices.Add(n);
+                    notices.Add((ViewN)n);
                     Controls.Add(notices[i]);
                     notices[i].Show();
                 }
 
+                listening(notices);
                 page++;
                 labelPage.Text = page.ToString();
             }
@@ -202,6 +199,36 @@ namespace NoticeMyCar.BuyACa.WindowMain.View
                 Controls.Remove(f);
 
             settingUpNotices();
+        }
+
+        private Form activeForm = null;
+
+        private void changePanel(Form panel)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+
+            activeForm = panel;
+            panel.TopLevel = false;
+            panel.Dock = DockStyle.Fill;
+            Controls.Add(panel);
+            Tag = panel;
+            panel.BringToFront();
+            panel.Show();
+        }
+
+        void listening(List<ViewN> viewNs)
+        {
+            foreach (var v in viewNs)
+                v.showComments += (sender, EventArgs) => { givesTheId(sender, EventArgs, v.id); };
+        }
+
+        void givesTheId(object sender, EventArgs e, int id)
+        {
+            panelBottom.Hide();
+
+            ViewC view = new ViewC(id);
+            changePanel(view);
         }
     }
 }

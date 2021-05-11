@@ -38,9 +38,10 @@ D:\0\0\10\NoticeMyCar\NoticeMyCar\bin\Debug\RestSharp.dll
 D:\0\0\10\NoticeMyCar\NoticeMyCar\bin\Debug\RestSharp.xml
 D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.SellACars.AddNotice.View.ViewA.resources
 D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.BuyACar.Notice.View.ViewN.resources
-D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.BuyACa.WindowMain.View.ViewB.resources
 D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.SellACars.Notice.View.ViewN.resources
 D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.SellACars.WindowMain.View.ViewS.resources
 D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.Observed.MainWindow.View.ViewO.resources
 D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.Observed.Notice.View.ViewN.resources
 D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.SendAMessage.View.ViewSAM.resources
+D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.CommonNoticeDetail.View.ViewC.resources
+D:\0\0\10\NoticeMyCar\NoticeMyCar\obj\Debug\NoticeMyCar.BuyACar.WindowMain.View.ViewB.resources

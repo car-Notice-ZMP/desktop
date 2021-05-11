@@ -118,6 +118,20 @@
     <Compile Include="BuyACar\WindowMain\View\ViewB.Designer.cs">
       <DependentUpon>ViewB.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommonNoticeDetail\CreateObjects.cs" />
+    <Compile Include="CommonNoticeDetail\ICreateObjects.cs" />
+    <Compile Include="CommonNoticeDetail\Model\IModelC.cs" />
+    <Compile Include="CommonNoticeDetail\Model\ModelC.cs" />
+    <Compile Include="CommonNoticeDetail\Presenter\PresenterC.cs" />
+    <Compile Include="CommonNoticeDetail\Service\IServiceC.cs" />
+    <Compile Include="CommonNoticeDetail\Service\ServiceC.cs" />
+    <Compile Include="CommonNoticeDetail\View\IViewC.cs" />
+    <Compile Include="CommonNoticeDetail\View\ViewC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonNoticeDetail\View\ViewC.Designer.cs">
+      <DependentUpon>ViewC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\ICreateObjects.cs" />
     <Compile Include="Login\Service\IServiceL.cs" />
     <Compile Include="Login\View\IViewL.cs" />
@@ -231,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BuyACar\WindowMain\View\ViewB.resx">
       <DependentUpon>ViewB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonNoticeDetail\View\ViewC.resx">
+      <DependentUpon>ViewC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\View\ViewL.resx">
       <DependentUpon>ViewL.cs</DependentUpon>

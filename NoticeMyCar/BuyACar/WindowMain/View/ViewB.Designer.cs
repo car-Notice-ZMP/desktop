@@ -1,5 +1,5 @@
 ﻿
-namespace NoticeMyCar.BuyACa.WindowMain.View
+namespace NoticeMyCar.BuyACar.WindowMain.View
 {
     partial class ViewB
     {

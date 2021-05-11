@@ -14,6 +14,7 @@ namespace NoticeMyCar.SellACars.Notice.View
         public event EventHandler delete;
         public event EventHandler status;
         public event EventHandler edit;
+        public event EventHandler showComments;
 
         List<string> data = new List<string>();
         List<string> changes = new List<string>();
@@ -302,6 +303,11 @@ namespace NoticeMyCar.SellACars.Notice.View
             Control[] tbxs = Controls.Find("textBox", false);
             RichTextBox rtb = tbxs[tbxs.Length - 1] as RichTextBox;
             return rtb;
+        }
+
+        private void iconButtonComments_Click(object sender, EventArgs e)
+        {
+            showComments(this, EventArgs.Empty);
         }
     }
 }

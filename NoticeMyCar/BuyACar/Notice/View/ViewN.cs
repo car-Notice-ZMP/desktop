@@ -13,11 +13,12 @@ namespace NoticeMyCar.BuyACar.Notice.View
         public event EventHandler addinToWatched;
         public event EventHandler searchedd;
         public event EventHandler giveTheNumberOfFoundNotices;
+        public event EventHandler showComments;
 
         Panel panel = new Panel();
 
         int numberOfUserNotices;
-        int index = 0;
+        int index;
 
         string searched;
 
@@ -142,6 +143,11 @@ namespace NoticeMyCar.BuyACar.Notice.View
         private void iconButtonAddinToWatched_Click(object sender, EventArgs e)
         {
             addinToWatched(this, EventArgs.Empty);
+        }
+
+        private void iconButtonComments_Click(object sender, EventArgs e)
+        {
+            showComments(this, EventArgs.Empty);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using NoticeMyCar.Observed.Notice.View;
+﻿using NoticeMyCar.CommonNoticeDetail.View;
+using NoticeMyCar.Observed.Notice.View;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -8,7 +9,7 @@ namespace NoticeMyCar.Observed.MainWindow.View
 {
     public partial class ViewO : Form
     {
-        List<Form> notices = new List<Form>();
+        List<ViewN> notices = new List<ViewN>();
         int page = 0;
         int newPage = 0;
         ViewN viewN = new ViewN();
@@ -71,11 +72,12 @@ namespace NoticeMyCar.Observed.MainWindow.View
                     x += 650;
 
                     n.TopLevel = false;
-                    notices.Add(n);
+                    notices.Add((ViewN)n);
                     Controls.Add(notices[i]);
                     notices[i].Show();
                 }
 
+                listening(notices);
                 page++;
                 labelPage.Text = page.ToString();
             }
@@ -138,7 +140,6 @@ namespace NoticeMyCar.Observed.MainWindow.View
         {
             int spaceForAnnouncement = spaceForAnnouncements();
             int a = page * spaceForAnnouncement;
-            int b = notices.Count % spaceForAnnouncement;
 
             if (a + spaceForAnnouncement < notices.Count)
             {
@@ -194,6 +195,20 @@ namespace NoticeMyCar.Observed.MainWindow.View
         {
             if (page != 1)
                 comeBack();
+        }
+
+        void listening(List<ViewN> viewNs)
+        {
+            foreach (var v in viewNs)
+                v.showComments += (sender, EventArgs) => { givesTheId(sender, EventArgs, v.id); };
+        }
+
+        void givesTheId(object sender, EventArgs e, int id)
+        {
+            panelBottom.Hide();
+
+            ViewC view = new ViewC(id);
+            changePanel(view);
         }
     }
 }

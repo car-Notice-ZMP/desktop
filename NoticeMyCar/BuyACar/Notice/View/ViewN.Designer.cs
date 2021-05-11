@@ -54,6 +54,7 @@ namespace NoticeMyCar.BuyACar.Notice.View
             this.labelEmail = new System.Windows.Forms.Label();
             this.panelDataAuthor = new System.Windows.Forms.Panel();
             this.iconButtonAddinToWatched = new FontAwesome.Sharp.IconButton();
+            this.iconButtonComments = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAuthorAvatar)).BeginInit();
@@ -335,13 +336,30 @@ namespace NoticeMyCar.BuyACar.Notice.View
             this.iconButtonAddinToWatched.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.iconButtonAddinToWatched.IconColor = System.Drawing.Color.LightGray;
             this.iconButtonAddinToWatched.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonAddinToWatched.IconSize = 20;
-            this.iconButtonAddinToWatched.Location = new System.Drawing.Point(575, 0);
+            this.iconButtonAddinToWatched.IconSize = 22;
+            this.iconButtonAddinToWatched.Location = new System.Drawing.Point(557, 0);
             this.iconButtonAddinToWatched.Name = "iconButtonAddinToWatched";
-            this.iconButtonAddinToWatched.Size = new System.Drawing.Size(25, 25);
+            this.iconButtonAddinToWatched.Size = new System.Drawing.Size(43, 25);
             this.iconButtonAddinToWatched.TabIndex = 45;
             this.iconButtonAddinToWatched.UseVisualStyleBackColor = false;
             this.iconButtonAddinToWatched.Click += new System.EventHandler(this.iconButtonAddinToWatched_Click);
+            // 
+            // iconButtonComments
+            // 
+            this.iconButtonComments.BackColor = System.Drawing.Color.Transparent;
+            this.iconButtonComments.FlatAppearance.BorderSize = 0;
+            this.iconButtonComments.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.iconButtonComments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonComments.IconChar = FontAwesome.Sharp.IconChar.Comment;
+            this.iconButtonComments.IconColor = System.Drawing.Color.LightGray;
+            this.iconButtonComments.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.iconButtonComments.IconSize = 22;
+            this.iconButtonComments.Location = new System.Drawing.Point(514, 0);
+            this.iconButtonComments.Name = "iconButtonComments";
+            this.iconButtonComments.Size = new System.Drawing.Size(43, 25);
+            this.iconButtonComments.TabIndex = 46;
+            this.iconButtonComments.UseVisualStyleBackColor = false;
+            this.iconButtonComments.Click += new System.EventHandler(this.iconButtonComments_Click);
             // 
             // ViewN
             // 
@@ -349,6 +367,7 @@ namespace NoticeMyCar.BuyACar.Notice.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(600, 400);
+            this.Controls.Add(this.iconButtonComments);
             this.Controls.Add(this.iconButtonAddinToWatched);
             this.Controls.Add(this.panelDataAuthor);
             this.Controls.Add(this.pictureBoxAuthorAvatar);
@@ -414,5 +433,6 @@ namespace NoticeMyCar.BuyACar.Notice.View
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Panel panelDataAuthor;
         private FontAwesome.Sharp.IconButton iconButtonAddinToWatched;
+        private FontAwesome.Sharp.IconButton iconButtonComments;
     }
 }

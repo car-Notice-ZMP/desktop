@@ -1,27 +1,26 @@
-﻿using NoticeMyCar.Observed.Notice.Model;
+﻿using NoticeMyCar.CommonNoticeDetail.Model;
 using System;
 using System.Drawing;
 using System.Net;
 using System.Windows.Forms;
 
-namespace NoticeMyCar.Observed.Notice.View
+namespace NoticeMyCar.CommonNoticeDetail.View
 {
-    public partial class ViewN : Form, IViewN
+    public partial class ViewC : Form, IViewC
     {
-        public event EventHandler giveTheNumberOfNotices;
-        public event EventHandler noticeAndId;
-        public event EventHandler removeFromWatched;
-        public event EventHandler showComments;
+        public event EventHandler giveMeTheData;
+        public event EventHandler addComment;
 
-        int numberOfUserNotices;
-        int index = 0;
+        int index;
 
-        public ViewN()
+        public ViewC(int id)
         {
             InitializeComponent();
 
             CreateObjects createObjects = new CreateObjects();
             createObjects.FacityFactory(this);
+
+            giveId(id);
         }
 
         public int id
@@ -29,12 +28,12 @@ namespace NoticeMyCar.Observed.Notice.View
             get { return index; }
         }
 
-        public void NumNumberOfNotices(int numberOfNotices)
+        public string content
         {
-            numberOfUserNotices = numberOfNotices;
+            get { return richTextBoxContent.Text; }
         }
 
-        public void Data(IModelN data)
+        public void Data(IModelC data)
         {
             index = data.id;
 
@@ -62,6 +61,23 @@ namespace NoticeMyCar.Observed.Notice.View
             labelContent.Text = data.message;
         }
 
+        public void HasAnNoticeBeenAdded(bool wasItSuccessful)
+        {
+            if (wasItSuccessful)
+            {
+                iconPictureBoxWasItSent.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+                iconPictureBoxWasItSent.IconColor = Color.LimeGreen;
+            }
+            else
+            {
+                iconPictureBoxWasItSent.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+                iconPictureBoxWasItSent.IconColor = Color.Red;
+            }
+
+            iconPictureBoxWasItSent.Visible = true;
+
+        }
+
         private System.IO.Stream convertToStream(string link)
         {
             WebRequest request = WebRequest.Create(link);
@@ -69,26 +85,6 @@ namespace NoticeMyCar.Observed.Notice.View
             var str = response.GetResponseStream();
 
             return str;
-        }
-
-        public int theNumberOfMyNotices()
-        {
-            giveTheNumberOfNotices(this, EventArgs.Empty);
-            return numberOfUserNotices;
-        }
-
-        public Form Notices(int id)
-        {
-            index = id;
-            noticeAndId(this, EventArgs.Empty);
-            return this;
-        }
-
-        private void iconButtonRemoveToWatched_Click(object sender, EventArgs e)
-        {
-            index = id;
-            removeFromWatched(this, EventArgs.Empty);
-            Close();
         }
 
         private void pictureBoxAuthorAvatar_MouseEnter(object sender, EventArgs e)
@@ -101,9 +97,15 @@ namespace NoticeMyCar.Observed.Notice.View
             panelDataAuthor.Hide();
         }
 
-        private void iconButtonComments_Click(object sender, EventArgs e)
+        private void giveId(int id)
         {
-            showComments(this, EventArgs.Empty);
+            index = id;
+            giveMeTheData(this, EventArgs.Empty);
+        }
+
+        private void buttonSend_Click(object sender, EventArgs e)
+        {
+            addComment(this, EventArgs.Empty);
         }
     }
 }

@@ -54,6 +54,7 @@ namespace NoticeMyCar.Observed.Notice.View
             this.panelDataAuthor = new System.Windows.Forms.Panel();
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
+            this.iconButtonComments = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAuthorAvatar)).BeginInit();
@@ -301,10 +302,10 @@ namespace NoticeMyCar.Observed.Notice.View
             this.iconButtonRemoveToWatched.IconChar = FontAwesome.Sharp.IconChar.Minus;
             this.iconButtonRemoveToWatched.IconColor = System.Drawing.Color.LightGray;
             this.iconButtonRemoveToWatched.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonRemoveToWatched.IconSize = 20;
-            this.iconButtonRemoveToWatched.Location = new System.Drawing.Point(575, 0);
+            this.iconButtonRemoveToWatched.IconSize = 22;
+            this.iconButtonRemoveToWatched.Location = new System.Drawing.Point(557, 0);
             this.iconButtonRemoveToWatched.Name = "iconButtonRemoveToWatched";
-            this.iconButtonRemoveToWatched.Size = new System.Drawing.Size(25, 25);
+            this.iconButtonRemoveToWatched.Size = new System.Drawing.Size(43, 25);
             this.iconButtonRemoveToWatched.TabIndex = 61;
             this.iconButtonRemoveToWatched.UseVisualStyleBackColor = false;
             this.iconButtonRemoveToWatched.Click += new System.EventHandler(this.iconButtonRemoveToWatched_Click);
@@ -343,11 +344,29 @@ namespace NoticeMyCar.Observed.Notice.View
             this.labelName.TabIndex = 42;
             this.labelName.Text = "X";
             // 
+            // iconButtonComments
+            // 
+            this.iconButtonComments.BackColor = System.Drawing.Color.Transparent;
+            this.iconButtonComments.FlatAppearance.BorderSize = 0;
+            this.iconButtonComments.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.iconButtonComments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonComments.IconChar = FontAwesome.Sharp.IconChar.Comment;
+            this.iconButtonComments.IconColor = System.Drawing.Color.LightGray;
+            this.iconButtonComments.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.iconButtonComments.IconSize = 22;
+            this.iconButtonComments.Location = new System.Drawing.Point(514, 0);
+            this.iconButtonComments.Name = "iconButtonComments";
+            this.iconButtonComments.Size = new System.Drawing.Size(43, 25);
+            this.iconButtonComments.TabIndex = 63;
+            this.iconButtonComments.UseVisualStyleBackColor = false;
+            this.iconButtonComments.Click += new System.EventHandler(this.iconButtonComments_Click);
+            // 
             // ViewN
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(600, 400);
+            this.Controls.Add(this.iconButtonComments);
             this.Controls.Add(this.panelDataAuthor);
             this.Controls.Add(this.iconButtonRemoveToWatched);
             this.Controls.Add(this.labelContent);
@@ -413,5 +432,6 @@ namespace NoticeMyCar.Observed.Notice.View
         private System.Windows.Forms.Panel panelDataAuthor;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelName;
+        private FontAwesome.Sharp.IconButton iconButtonComments;
     }
 }

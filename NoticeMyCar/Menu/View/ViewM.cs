@@ -1,5 +1,5 @@
 ﻿using NoticeMyCar.Account.View;
-using NoticeMyCar.BuyACa.WindowMain.View;
+using NoticeMyCar.BuyACar.WindowMain.View;
 using NoticeMyCar.Login.View;
 using NoticeMyCar.Observed.MainWindow.View;
 using NoticeMyCar.SellACars.WindowMain.View;
