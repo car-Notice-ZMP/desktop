@@ -100,12 +100,14 @@ namespace NoticeMyCar.CommonNoticeDetail.View
             Label name = new Label();
             name.Location = new Point(75, 0);
             name.Font = new Font("Microsoft Sans Serif", 12);
+            name.AutoSize = true;
             name.ForeColor = Color.DodgerBlue;
             name.Text = comment.comment_author;
 
             Label content = new Label();
             content.Location = new Point(75, 20);
             content.Font = new Font("Microsoft Sans Serif", 10);
+            content.AutoSize = true;
             content.Text = comment.content;
 
             panel.Controls.Add(avatar);
