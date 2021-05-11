@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 
 namespace Test
 {
@@ -9,6 +8,9 @@ namespace Test
         [TestMethod]
         public void TestMethod1()
         {
+            var view = new NoticeMyCar.BuyACar.WindowMain.View.ViewB();
+
+            Assert.AreEqual(4, view.spaceForAnnouncements());
         }
     }
 }
