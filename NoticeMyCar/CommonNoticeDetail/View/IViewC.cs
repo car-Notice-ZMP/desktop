@@ -3,9 +3,19 @@ using System;
 
 namespace NoticeMyCar.CommonNoticeDetail.View
 {
-    public interface IData
+    public interface INotic
     {
-        void Data(IModelC data);
+        void Notice(INotice data);
+    }
+
+    public interface INumberOfComments
+    {
+        void NumberOfComments(int q);
+    }
+
+    public interface ICommen
+    {
+        void Comment(IComment comment);
     }
 
     public interface IHasAnNoticeBeenAdded
@@ -13,12 +23,15 @@ namespace NoticeMyCar.CommonNoticeDetail.View
         void HasAnNoticeBeenAdded(bool wasItSuccessful);
     }
 
-    public interface IViewC : IData, IHasAnNoticeBeenAdded
+    public interface IViewC : INotic, INumberOfComments, ICommen, IHasAnNoticeBeenAdded
     {
         string content { get; }
         int id { get; }
+        int number { get; }
 
         event EventHandler addComment;
-        event EventHandler giveMeTheData;
+        event EventHandler giveComment;
+        event EventHandler giveMeTheNotice;
+        event EventHandler giveTheNumberOfComments;
     }
 }

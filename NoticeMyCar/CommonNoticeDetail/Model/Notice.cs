@@ -1,6 +1,6 @@
 ﻿namespace NoticeMyCar.CommonNoticeDetail.Model
 {
-    class ModelC : IModelC
+    class Notice : INotice
     {
         public int id { get; set; }
         public string image_url { get; set; }
@@ -18,6 +18,5 @@
         public string image { get; set; }
         public string year { get; set; }
         public string name { get; set; }
-        public string content { get; set; }
     }
 }

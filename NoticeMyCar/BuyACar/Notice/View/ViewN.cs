@@ -66,10 +66,10 @@ namespace NoticeMyCar.BuyACar.Notice.View
                 iconPictureBoxStatus.IconColor = Color.Red;
 
             var str = convertToStream(data.image_url);
-            pictureBoxCar.Image = Bitmap.FromStream(str);
+            pictureBoxCar.Image = Image.FromStream(str);
 
             str = convertToStream(data.author_avatar);
-            pictureBoxAuthorAvatar.Image = Bitmap.FromStream(str);
+            pictureBoxAuthorAvatar.Image = Image.FromStream(str);
 
             labelTitle.Text = data.title;
             labelMark.Text = data.mark;

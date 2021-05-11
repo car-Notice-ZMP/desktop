@@ -120,8 +120,10 @@
     </Compile>
     <Compile Include="CommonNoticeDetail\CreateObjects.cs" />
     <Compile Include="CommonNoticeDetail\ICreateObjects.cs" />
-    <Compile Include="CommonNoticeDetail\Model\IModelC.cs" />
-    <Compile Include="CommonNoticeDetail\Model\ModelC.cs" />
+    <Compile Include="CommonNoticeDetail\Model\Comment.cs" />
+    <Compile Include="CommonNoticeDetail\Model\IComment.cs" />
+    <Compile Include="CommonNoticeDetail\Model\INotice.cs" />
+    <Compile Include="CommonNoticeDetail\Model\Notice.cs" />
     <Compile Include="CommonNoticeDetail\Presenter\PresenterC.cs" />
     <Compile Include="CommonNoticeDetail\Service\IServiceC.cs" />
     <Compile Include="CommonNoticeDetail\Service\ServiceC.cs" />

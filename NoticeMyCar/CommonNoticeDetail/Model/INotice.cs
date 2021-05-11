@@ -1,11 +1,10 @@
 ﻿namespace NoticeMyCar.CommonNoticeDetail.Model
 {
-    public interface IModelC
+    public interface INotice
     {
         string author_avatar { get; set; }
         string body { get; set; }
         string color { get; set; }
-        string content { get; set; }
         int id { get; set; }
         string image { get; set; }
         string image_url { get; set; }

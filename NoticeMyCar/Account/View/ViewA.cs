@@ -25,7 +25,7 @@ namespace NoticeMyCar.Account.View
             WebRequest request = WebRequest.Create(data.avatar);
             var response = request.GetResponse();
             var str = response.GetResponseStream();
-            pictureBoxAvatar.Image = Bitmap.FromStream(str);
+            pictureBoxAvatar.Image = Image.FromStream(str);
 
             labelName.Text = data.name;
             labelEmail.Text = data.email;
@@ -33,7 +33,9 @@ namespace NoticeMyCar.Account.View
 
         private void pictureBox1_Resize(object sender, EventArgs e)
         {
-            pictureBoxAvatar.Size = new Size(pictureBoxAvatar.Size.Height, pictureBoxAvatar.Size.Height);
+            int height = pictureBoxAvatar.Size.Height;
+
+            pictureBoxAvatar.Size = new Size(height, height);
         }
     }
 }

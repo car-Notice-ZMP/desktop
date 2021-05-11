@@ -7,14 +7,16 @@ namespace NoticeMyCar.CommonNoticeDetail.Service
 {
     class ServiceC : IServiceC
     {
-        private readonly IModelC _model;
+        private readonly INotice _notice;
+        private readonly IComment _comment;
 
-        public ServiceC(IModelC model)
+        public ServiceC(INotice notice, IComment comment)
         {
-            _model = model;
+            _notice = notice;
+            _comment = comment;
         }
 
-        public IModelC Notice(int id)
+        public INotice Notice(int id)
         {
             int i = 0;
             bool whetherThereWasAnId = false;
@@ -32,7 +34,7 @@ namespace NoticeMyCar.CommonNoticeDetail.Service
             {
                 if (r.Equals("title"))
                 {
-                    _model.id = int.Parse(
+                    _notice.id = int.Parse(
                         result[i - 1]
                         .Remove(0, 1)
                         .Replace(",", "")
@@ -44,46 +46,46 @@ namespace NoticeMyCar.CommonNoticeDetail.Service
                 if (whetherThereWasAnId)
                 {
                     if (r.Equals("title"))
-                        _model.title = result[i + 2];
+                        _notice.title = result[i + 2];
                     else if (r.Equals("message"))
-                        _model.message = result[i + 2];
+                        _notice.message = result[i + 2];
                     else if (r.Equals("notice_author"))
-                        _model.notice_author = result[i + 2];
+                        _notice.notice_author = result[i + 2];
                     else if (r.Equals("notice_author_email"))
-                        _model.notice_author_email = result[i + 2];
+                        _notice.notice_author_email = result[i + 2];
                     else if (r.Equals("author_avatar"))
-                        _model.author_avatar = result[i + 2];
+                        _notice.author_avatar = result[i + 2];
                     else if (r.Equals("mark"))
-                        _model.mark = result[i + 2];
+                        _notice.mark = result[i + 2];
                     else if (r.Equals("model"))
-                        _model.model = result[i + 2];
+                        _notice.model = result[i + 2];
                     else if (r.Equals("color"))
-                        _model.color = result[i + 2];
+                        _notice.color = result[i + 2];
                     else if (r.Equals("year"))
-                        _model.year = result[i + 1]
+                        _notice.year = result[i + 1]
                             .ToString()
                             .Remove(0, 2)
                             .Replace(",", "")
                             .Trim();
                     else if (r.Equals("mileage"))
-                        _model.mileage = result[i + 1]
+                        _notice.mileage = result[i + 1]
                             .ToString()
                             .Remove(0, 2)
                             .Replace(",", "")
                             .Trim();
                     else if (r.Equals("price"))
-                        _model.price = result[i + 1]
+                        _notice.price = result[i + 1]
                             .ToString()
                             .Remove(0, 2)
                             .Replace(",", "")
                             .Trim();
                     else if (r.Equals("body"))
-                        _model.body = result[i + 2];
+                        _notice.body = result[i + 2];
                     else if (r.Equals("image_url"))
-                        _model.image_url = result[i + 2];
+                        _notice.image_url = result[i + 2];
                     else if (r.Equals("name"))
                     {
-                        _model.name = result[i + 2];
+                        _notice.name = result[i + 2];
                         break;
                     }
                 }
@@ -91,19 +93,85 @@ namespace NoticeMyCar.CommonNoticeDetail.Service
                 i++;
             }
 
-            return _model;
+            return _notice;
         }
 
-        public bool addComment(IViewC view, int id)
+        public int NumberOfComments(int id)
+        {
+            int numberofComments = 0;
+            bool isThereAComment = false;
+
+            var client = new RestClient("https://citygame.ga/api/notices/show/" + id.ToString());
+            client.Timeout = -1;
+            var request = new RestRequest(Method.GET);
+            IRestResponse response = client.Execute(request);
+
+            string[] result = response.Content.Split(new char[] { '"' });
+
+            foreach (var r in result)
+            {
+                if (r.Equals("comments"))
+                    isThereAComment = true;
+
+                if (isThereAComment && r.Equals("id"))
+                    numberofComments++;
+            }
+
+            return numberofComments;
+        }
+
+        public IComment Comment(int id, int numberOfComment)
+        {
+            int i = 0;
+            int index = -1;
+            bool isThereAComment = false;
+
+            var client = new RestClient("https://citygame.ga/api/notices/show/" + id.ToString());
+            client.Timeout = -1;
+            var request = new RestRequest(Method.GET);
+            IRestResponse response = client.Execute(request);
+
+            JObject decodedResponse = JObject.Parse(response.Content);
+
+            string[] result = decodedResponse.ToString().Split(new char[] { '"' });
+
+            foreach (var r in result)
+            {
+                if (r.Equals("comments"))
+                    isThereAComment = true;
+
+                if (isThereAComment && r.Equals("id"))
+                    index++;
+
+                if (isThereAComment && index == numberOfComment)
+                {
+                    if (r.Equals("content"))
+                        _comment.content = result[i + 2];
+                    else if (r.Equals("comment_author"))
+                        _comment.comment_author = result[i + 2];
+                    else if (r.Equals("author_avatar"))
+                    {
+                        _comment.author_avatar = result[i + 2];
+                        break;
+                    }
+                }
+
+                i++;
+            }
+
+            return _comment;
+        }
+
+        public bool AddComment(IViewC view, int id)
         {
             bool hasAnNoticeBeenAdded;
 
-            _model.content = view.content;
+            _comment.content = view.content;
 
             var client = new RestClient("https://citygame.ga/api/comments/" + id.ToString() + "/store");
             client.Timeout = -1;
             var request = new RestRequest(Method.POST);
-            request.AddQueryParameter("content", _model.content);
+            request.AddQueryParameter("content", _comment.content);
             request.AddHeader("Authorization", "Bearer " + Token.returnToken());
             IRestResponse response = client.Execute(request);
 

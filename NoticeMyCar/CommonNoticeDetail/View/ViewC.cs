@@ -8,10 +8,15 @@ namespace NoticeMyCar.CommonNoticeDetail.View
 {
     public partial class ViewC : Form, IViewC
     {
-        public event EventHandler giveMeTheData;
+        public event EventHandler giveMeTheNotice;
         public event EventHandler addComment;
+        public event EventHandler giveComment;
+        public event EventHandler giveTheNumberOfComments;
 
         int index;
+        int quantity;
+        int x = 119;
+        int y = 457;
 
         public ViewC(int id)
         {
@@ -20,7 +25,9 @@ namespace NoticeMyCar.CommonNoticeDetail.View
             CreateObjects createObjects = new CreateObjects();
             createObjects.FacityFactory(this);
 
-            giveId(id);
+            givesTheId(id);
+            giveTheNumberOfComments(this, EventArgs.Empty);
+            commentField();
         }
 
         public int id
@@ -33,7 +40,12 @@ namespace NoticeMyCar.CommonNoticeDetail.View
             get { return richTextBoxContent.Text; }
         }
 
-        public void Data(IModelC data)
+        public int number
+        {
+            get { return quantity; }
+        }
+
+        public void Notice(INotice data)
         {
             index = data.id;
 
@@ -43,10 +55,10 @@ namespace NoticeMyCar.CommonNoticeDetail.View
                 iconPictureBoxStatus.IconColor = Color.Red;
 
             var str = convertToStream(data.image_url);
-            pictureBoxCar.Image = Bitmap.FromStream(str);
+            pictureBoxCar.Image = Image.FromStream(str);
 
             str = convertToStream(data.author_avatar);
-            pictureBoxAuthorAvatar.Image = Bitmap.FromStream(str);
+            pictureBoxAuthorAvatar.Image = Image.FromStream(str);
 
             labelTitle.Text = data.title;
             labelMark.Text = data.mark;
@@ -59,6 +71,50 @@ namespace NoticeMyCar.CommonNoticeDetail.View
             labelName.Text = data.notice_author;
             labelEmail.Text = data.notice_author_email;
             labelContent.Text = data.message;
+        }
+
+        public void NumberOfComments(int q)
+        {
+            for (int i = 0; i < q; i++)
+            {
+                quantity = i;
+                giveComment(this, EventArgs.Empty);
+            }
+        }
+
+        public void Comment(IComment comment)
+        {
+            Panel panel = new Panel();
+            panel.Location = new Point(x, y);
+            panel.Size = new Size(600, 85);
+            panel.Anchor = AnchorStyles.Top;
+            panel.BackColor = ColorTranslator.FromHtml("#202020");
+
+            PictureBox avatar = new PictureBox();
+            avatar.Location = new Point(18, 18);
+            avatar.Size = new Size(50, 50);
+            avatar.SizeMode = PictureBoxSizeMode.Zoom;
+            var image = convertToStream(comment.author_avatar);
+            avatar.Image = Image.FromStream(image);
+
+            Label name = new Label();
+            name.Location = new Point(75, 0);
+            name.Font = new Font("Microsoft Sans Serif", 12);
+            name.ForeColor = Color.DodgerBlue;
+            name.Text = comment.comment_author;
+
+            Label content = new Label();
+            content.Location = new Point(75, 20);
+            content.Font = new Font("Microsoft Sans Serif", 10);
+            content.Text = comment.content;
+
+            panel.Controls.Add(avatar);
+            panel.Controls.Add(name);
+            panel.Controls.Add(content);
+
+            Controls.Add(panel);
+
+            y += 100;
         }
 
         public void HasAnNoticeBeenAdded(bool wasItSuccessful)
@@ -97,10 +153,18 @@ namespace NoticeMyCar.CommonNoticeDetail.View
             panelDataAuthor.Hide();
         }
 
-        private void giveId(int id)
+        private void givesTheId(int id)
         {
             index = id;
-            giveMeTheData(this, EventArgs.Empty);
+            giveMeTheNotice(this, EventArgs.Empty);
+        }
+
+        private void commentField()
+        {
+            int pictureX = iconPictureBoxWasItSent.Location.X;
+
+            panelAddComment.Location = new Point(x, y);
+            iconPictureBoxWasItSent.Location = new Point(pictureX, y);
         }
 
         private void buttonSend_Click(object sender, EventArgs e)

@@ -5,7 +5,9 @@ namespace NoticeMyCar.CommonNoticeDetail.Service
 {
     interface IServiceC
     {
-        bool addComment(IViewC view, int id);
-        IModelC Notice(int id);
+        bool AddComment(IViewC view, int id);
+        IComment Comment(int id, int numberOfComment);
+        INotice Notice(int id);
+        int NumberOfComments(int id);
     }
 }

@@ -66,7 +66,7 @@ namespace NoticeMyCar.SellACars.Notice.View
             var response = request.GetResponse();
             var str = response.GetResponseStream();
 
-            pictureBoxCar.Image = Bitmap.FromStream(str);
+            pictureBoxCar.Image = Image.FromStream(str);
 
             labelTitle.Text = data.title;
             labelMark.Text = data.mark;

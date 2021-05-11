@@ -54,16 +54,16 @@ namespace NoticeMyCar.CommonNoticeDetail.View
             this.pictureBoxAuthorAvatar = new System.Windows.Forms.PictureBox();
             this.iconPictureBoxStatus = new FontAwesome.Sharp.IconPictureBox();
             this.pictureBoxCar = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.richTextBoxContent = new System.Windows.Forms.RichTextBox();
+            this.panelAddComment = new System.Windows.Forms.Panel();
             this.buttonSend = new System.Windows.Forms.Button();
+            this.richTextBoxContent = new System.Windows.Forms.RichTextBox();
             this.iconPictureBoxWasItSent = new FontAwesome.Sharp.IconPictureBox();
             this.panel1.SuspendLayout();
             this.panelDataAuthor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAuthorAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panelAddComment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWasItSent)).BeginInit();
             this.SuspendLayout();
             // 
@@ -364,25 +364,16 @@ namespace NoticeMyCar.CommonNoticeDetail.View
             this.pictureBoxCar.TabIndex = 11;
             this.pictureBoxCar.TabStop = false;
             // 
-            // panel2
+            // panelAddComment
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.panel2.Controls.Add(this.buttonSend);
-            this.panel2.Controls.Add(this.richTextBoxContent);
-            this.panel2.Location = new System.Drawing.Point(119, 457);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(600, 85);
-            this.panel2.TabIndex = 1;
-            // 
-            // richTextBoxContent
-            // 
-            this.richTextBoxContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.richTextBoxContent.Location = new System.Drawing.Point(17, 14);
-            this.richTextBoxContent.Name = "richTextBoxContent";
-            this.richTextBoxContent.Size = new System.Drawing.Size(476, 57);
-            this.richTextBoxContent.TabIndex = 0;
-            this.richTextBoxContent.Text = "";
+            this.panelAddComment.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panelAddComment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panelAddComment.Controls.Add(this.buttonSend);
+            this.panelAddComment.Controls.Add(this.richTextBoxContent);
+            this.panelAddComment.Location = new System.Drawing.Point(119, 457);
+            this.panelAddComment.Name = "panelAddComment";
+            this.panelAddComment.Size = new System.Drawing.Size(600, 85);
+            this.panelAddComment.TabIndex = 1;
             // 
             // buttonSend
             // 
@@ -396,6 +387,15 @@ namespace NoticeMyCar.CommonNoticeDetail.View
             this.buttonSend.Text = "Wyślij";
             this.buttonSend.UseVisualStyleBackColor = false;
             this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
+            // 
+            // richTextBoxContent
+            // 
+            this.richTextBoxContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.richTextBoxContent.Location = new System.Drawing.Point(17, 14);
+            this.richTextBoxContent.Name = "richTextBoxContent";
+            this.richTextBoxContent.Size = new System.Drawing.Size(476, 57);
+            this.richTextBoxContent.TabIndex = 0;
+            this.richTextBoxContent.Text = "";
             // 
             // iconPictureBoxWasItSent
             // 
@@ -421,7 +421,7 @@ namespace NoticeMyCar.CommonNoticeDetail.View
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(837, 554);
             this.Controls.Add(this.iconPictureBoxWasItSent);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelAddComment);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.LightGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -434,8 +434,8 @@ namespace NoticeMyCar.CommonNoticeDetail.View
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAuthorAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelAddComment.ResumeLayout(false);
+            this.panelAddComment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWasItSent)).EndInit();
             this.ResumeLayout(false);
 
@@ -444,7 +444,7 @@ namespace NoticeMyCar.CommonNoticeDetail.View
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelAddComment;
         private System.Windows.Forms.PictureBox pictureBoxCar;
         private FontAwesome.Sharp.IconPictureBox iconPictureBoxStatus;
         private System.Windows.Forms.PictureBox pictureBoxAuthorAvatar;

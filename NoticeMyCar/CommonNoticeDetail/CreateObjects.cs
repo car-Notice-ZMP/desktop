@@ -9,9 +9,10 @@ namespace NoticeMyCar.CommonNoticeDetail
     {
         public void FacityFactory(ViewC viewC)
         {
-            var modelC = new ModelC();
-            var serviceC = new ServiceC(modelC);
-            var presenterC = new PresenterC(viewC, serviceC, viewC, viewC);
+            var notice = new Notice();
+            var comment = new Comment();
+            var serviceC = new ServiceC(notice, comment);
+            var presenterC = new PresenterC(viewC, serviceC, viewC, viewC, viewC, viewC);
         }
     }
 }
