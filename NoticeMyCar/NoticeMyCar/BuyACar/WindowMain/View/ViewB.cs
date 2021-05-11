@@ -85,7 +85,7 @@ namespace NoticeMyCar.BuyACar.WindowMain.View
             }
         }
 
-        private int spaceForAnnouncements()
+        public int spaceForAnnouncements()
         {
             int x = 80;
             int y = 80;
